@@ -1,20 +1,139 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- Header -->
+<header id="header" class="transparent-navbar">
+  <!-- container -->
+  <div class="container">
+    <!-- navbar header -->
+    <div class="navbar-header">
+      <!-- Logo -->
+      <div class="navbar-brand">
+        <a class="logo" href="index.html">
+          <img class="logo-img" src="./img/logo.png" alt="logo">
+          <img class="logo-alt-img" src="./img/logo-alt.png" alt="logo">
+        </a>
+      </div>
+      <!-- /Logo -->
 
+      <!-- Mobile toggle -->
+      <button class="navbar-toggle">
+          <i class="fa fa-bars"></i>
+        </button>
+      <!-- /Mobile toggle -->
+    </div>
+    <!-- /navbar header -->
+
+    <!-- Navigation -->
+    <nav id="nav">
+      <ul class="main-nav nav navbar-nav navbar-right">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+    <!-- /Navigation -->
+  </div>
+  <!-- /container -->
+</header>
+<!-- /Header -->
+
+<!-- Home -->
+<div id="home">
+  <!-- background image -->
+  <div class="section-bg" style="background-image:url(./img/background01.jpg)" data-stellar-background-ratio="0.5"></div>
+  <!-- /background image -->
+
+  <!-- home wrapper -->
+  <div class="home-wrapper">
+    <app-home></app-home>
+    </div>
+		<!-- /home wrapper -->
+	</div>
+  <!-- /Home -->
+  
+  <!-- About -->
+	<div id="about" class="section">
+      <!-- container -->
+      <app-about></app-about>
+      	<!-- /container -->
+	</div>
+  <!-- /About -->
+  
+  <!-- Event Schedule -->
+	<div id="schedule" class="section">
+      <!-- container -->
+      <app-programme></app-programme>
+      <!-- /container -->
+	</div>
+  <!-- /Event Schedule -->
+  
+  <!-- Speakers -->
+	<div id="speakers" class="section">
+      <!-- container -->
+      <app-speakers></app-speakers>
+      <!-- /container -->
+	</div>
+  <!-- /Speakers -->
+  
+  <!-- Package -->
+	<div id="package" class="section">
+      <!-- container -->
+      <app-package></app-package>
+      <!-- /container -->
+	</div>
+  <!-- /Package -->
+  
+  <!-- Contact Us -->
+	<div id="contact" class="section">
+      <!-- container -->
+      <app-contactus></app-contactus>
+      <!-- /container -->
+    </div>
+    <!-- /Contact -->
+
+    <!-- Footer -->
+	<footer id="footer">
+      <!-- container -->
+      <div class="container">
+        <!-- row -->
+        <div class="row">
+  
+          <!-- footer logo -->
+          <div class="col-md-4 col-md-push-4">
+            <div class="footer-brand">
+              <a class="logo" href="index.html">
+                <img class="logo-img" src="./img/logo.png" alt="logo">
+              </a>
+            </div>
+          </div>
+          <!-- /footer logo -->
+  
+          <!-- contact social -->
+          <div class="col-md-4 col-md-push-4">
+            <div class="contact-social">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-google-plus"></i></a>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+              <a href="#"><i class="fa fa-pinterest"></i></a>
+              <a href="#"><i class="fa fa fa-linkedin"></i></a>
+            </div>
+          </div>
+          <!-- /contact social -->
+  
+          <!-- copyright -->
+          <div class="col-md-4 col-md-pull-8">
+            <span class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
+          </div>
+          <!-- /copyright -->
+  
+        </div>
+        <!-- /row -->
+      </div>
+      <!-- /container -->
+    </footer>
+    <!-- /Footer -->
