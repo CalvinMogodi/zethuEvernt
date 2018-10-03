@@ -1,0 +1,78 @@
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+.speaker-area .header-text {
+    text-align: center;
+}
+.pb-80 {
+    padding-bottom: 80px;
+}
+
+.speaker-wrap {
+    text-align: center;
+}
+
+.single-speaker .content {
+    position: relative;
+    max-width: 400px;
+    margin: auto;
+    overflow: hidden;
+}
+.single-speaker .content .content-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.p1-gradient-bg, .primary-btn, .primary-btn:after, .primary-btn2.primary-border:hover, .banner-content .clock_sec, .single-speaker .content .content-overlay, .calender-area .date td:hover, .calender-area span input:hover, .calender-area .single-event:hover, .single-footer-widget .bb-btn {
+    background-image: -moz-linear-gradient(0deg, #ca2dff 0%, #8e96f8 55%, #52fff1 100%);
+    background-image: -webkit-linear-gradient(0deg, #ca2dff 0%, #8e96f8 55%, #52fff1 100%);
+    background-image: -ms-linear-gradient(0deg, #ca2dff 0%, #8e96f8 55%, #52fff1 100%);
+}
+
+.mx-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+.d-block {
+    display: block !important;
+}
+.img-fluid {
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.single-speaker .fadeIn-bottom {
+    top: 80%;
+}
+.single-speaker .content-details {
+    position: absolute;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}

@@ -45,7 +45,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0px 0px 15px;
-  color: #0b0f28;
+  color: #131b47;
   font-weight: 700;
 }
 
@@ -132,7 +132,7 @@ textarea.input {
 
 .section {
   position: relative;
-  padding: 90px 0px;
+  padding: 90px;
 }
 
 .section-bg {
@@ -151,11 +151,8 @@ textarea.input {
 }
 
 .section-title .title {
-  position: relative;
-  text-transform: capitalize;
-  font-weight: 900;
-  font-size: 42px;
-  overflow: hidden;
+  font-family: "Poppins",sans-serif;
+    font-size: 32px;
 }
 
 .section-title .title>span {
@@ -283,7 +280,6 @@ textarea.input {
 }
 
 #header.fixed-navbar .main-nav li a {
-  color: #0b0f28;
 }
 
 .main-nav li.active a:after {
@@ -480,7 +476,7 @@ textarea.input {
 ===========================================================*/
 
 #speakers {
-  background-color: #F9F9FA;
+  background-color: #ffffff;
 }
 
 .speaker {
@@ -810,6 +806,8 @@ textarea.input {
 
 #contact.section {
   padding-bottom: 0px;
+    padding: 0px;
+    text-align: center;
 }
 
 .contact {
@@ -819,11 +817,6 @@ textarea.input {
 
 .contact h3 {
   color: #101e45;
-}
-
-#map {
-  height: 380px;
-  margin-top: 60px;
 }
 
 /*=========================================================
@@ -859,7 +852,7 @@ textarea.input {
 ===========================================================*/
 
 #footer {
-  padding: 60px 0px;
+  padding-top: 20px;
 }
 
 .footer-brand {
