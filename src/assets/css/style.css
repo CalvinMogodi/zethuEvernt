@@ -141,7 +141,8 @@ textarea.input {
   top: 0;
   right: 0;
   bottom: 0;
-  background-size: cover;
+  background-size: auto;
+  background-repeat: no-repeat;
   z-index: -1;
 }
 
@@ -361,7 +362,7 @@ textarea.input {
 
 #home .home-wrapper {
   position: absolute;
-  top: 50%;
+  top: 90%;
   left: 0;
   right: 0;
   text-align: center;
@@ -748,7 +749,7 @@ textarea.input {
   color: #FFF;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 40px;
   line-height: 40px;
 }
 
@@ -1080,4 +1081,12 @@ textarea.input {
   [class*='col-xs'] {
     width: 100%;
   }
+}
+
+.navbar-nav>li {
+  float: left;
+}
+.nav>li {
+  position: relative;
+  display: block;
 }

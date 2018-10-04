@@ -1,28 +1,54 @@
 <!-- Header -->
 <header id="header" class="transparent-navbar">
   <!-- container -->
+   <!-- Logo -->
+   <div class="navbar-brand">
+      <a class="logo" href="#">
+        <img class="logo-img" src="../assets/images/logo1.png" alt="logo">
+        <img class="logo-alt-img" src="../assets/images/logo1.png" alt="logo">
+      </a>
+    </div>
+    <!-- /Logo -->
   <div class="container">
     <!-- navbar header -->
     <div class="navbar-header">
-      <!-- Logo -->
-      <div class="navbar-brand">
-        <a class="logo" href="index.html">
-          <img class="logo-img" src="../assets/images/logo.png" alt="logo">
-          <img class="logo-alt-img" src="../assets/images/logo.png" alt="logo">
-        </a>
-      </div>
-      <!-- /Logo -->
+     
 
       <!-- Mobile toggle -->
       <button class="navbar-toggle">
         <i class="fa fa-bars"></i>
       </button>
       <!-- /Mobile toggle -->
-    </div>
+   
     <!-- /navbar header -->
 
     <!-- Navigation -->
-    <nav id="nav">
+    <ul class="nav main-nav navbar-right" id="nav" style="float: right!important;  margin-right: -15px;     margin-top: -68px;
+    padding: 15px;">
+        <li class="nav-item">
+            <a href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a href="#about">About</a>
+        </li>
+        <li class="nav-item">
+            <a href="#schedule">Schedule</a>
+        </li>
+        <li class="nav-item">
+            <a href="#speakers">Speakers</a>
+        </li>
+        <li class="nav-item">
+            <a href="#package">Packages</a>
+        </li>
+        <li class="nav-item">
+            <a href="#contact">Contact Us</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" style="display: initial !important;" class="main-btn" data-toggle="modal" data-target="#exampleModal">Register</a>
+        </li>
+      </ul>
+    </div>
+   <!-- <nav id="nav">
       <ul class="main-nav nav navbar-nav navbar-right">
         <li  id="menuitemhome"><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -30,10 +56,10 @@
         <li><a href="#speakers">Speakers</a></li>
         <li><a href="#package">Packages</a></li>
         <li><a href="#contact">Contact Us</a></li>
-        <li><a href="#" class="main-btn">Register</a></li>
+        <li><a href="#" class="main-btn" data-toggle="modal" data-target="#exampleModal">Register</a></li>
       </ul>
     </nav>
-    <!-- /Navigation -->
+     /Navigation -->
   </div>
   <!-- /container -->
 </header>
@@ -42,8 +68,9 @@
 <!-- Home -->
 <div id="home">
   <!-- background image -->
-  <div class="section-bg" style="background-image:url(../assets/images/background03.jpg)" data-stellar-background-ratio="0.5"></div>
-  <!-- /background image -->
+  <img height="100%" width="100%" src="../assets/images/background.PNG"/>
+   <!--<div class="section-bg" height="30px" width="100%" style="background-image:url(../assets/images/background.PNG)" data-stellar-background-ratio="0.5"></div>
+  /background image -->
 
   <!-- home wrapper -->
   <div class="home-wrapper">
@@ -132,3 +159,45 @@
   <!-- /container -->
 </footer>
 <!-- /Footer -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputEmail1">Surname</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter surname">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Phone Number</label>
+                        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+                      </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Confirm Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Confirm email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
