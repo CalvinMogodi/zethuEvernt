@@ -9,6 +9,11 @@ import { SpeakersComponent } from './speakers/speakers.component';
 import { PackageComponent } from './package/package.component';
 import { ContactusComponent } from './contactus/contactus.component';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +25,9 @@ import { ContactusComponent } from './contactus/contactus.component';
     ContactusComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule, // for database
   ],
   providers: [],
   bootstrap: [AppComponent]
