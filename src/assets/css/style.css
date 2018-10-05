@@ -41,6 +41,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   color: #444;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1033,56 +1034,6 @@ textarea.input {
   margin-bottom: 30px;
 }
 
-/*=========================================================
-	RESPONSIVE
-===========================================================*/
-
-@media only screen and (max-width: 991px) {
-  .contact-social {
-    text-align: center;
-    margin: 30px 0px;
-  }
-  .copyright {
-    display: block;
-    text-align: center;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .home-content h1 {
-    font-size: 31px;
-  }
-  .page-wrapper-content h1 {
-    font-size: 31px;
-  }
-  .event .event-day {
-    width: 90px;
-    height: 90px;
-  }
-  .event .event-content {
-    padding-left: 115px;
-  }
-  .event .event-day .day {
-    font-size: 31px;
-    line-height: 31px;
-  }
-  .event .event-hour {
-    left: 47px;
-  }
-  .event:after {
-    left: 45px;
-  }
-  .event+.event:before {
-    left: 45px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  [class*='col-xs'] {
-    width: 100%;
-  }
-}
-
 .navbar-nav>li {
   float: left;
 }
@@ -1098,4 +1049,12 @@ textarea.input {
 
 .pricing_price{
   font-size: 50px !important; 
+}
+
+.pricing_info{
+cursor: pointer;
+}
+
+.modiva{
+  width: 240px !important;
 }
