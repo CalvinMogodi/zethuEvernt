@@ -749,8 +749,7 @@ textarea.input {
   color: #FFF;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 20px;
 }
 
 .event .event-day .year {
@@ -761,11 +760,12 @@ textarea.input {
 
 .event .event-content {
   padding-left: 160px;
-  min-height: 120px;
+  min-height: 0px;
 }
 
 .event .event-time {
   font-size: 14px;
+  padding-top: 40px;
 }
 
 .event .event-time i {
@@ -1089,4 +1089,13 @@ textarea.input {
 .nav>li {
   position: relative;
   display: block;
+}
+
+.event-title{
+  margin-top: -15px;
+    margin-bottom: -3px;
+}
+
+.pricing_price{
+  font-size: 50px !important; 
 }
