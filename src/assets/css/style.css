@@ -42,8 +42,8 @@ body {
   font-size: 16px;
   color: #444;
   overflow-x: hidden;
+  overflow-y: auto;
 }
-
 h1, h2, h3, h4, h5, h6 {
   margin: 0px 0px 15px;
   color: #131b47;
@@ -323,10 +323,52 @@ textarea.input {
   color: #0b0f28 !important;
 }
 
+.isMobile{
+  display: none;
+}
+
 /* Mobile nav */
 
 @media only screen and (max-width: 767px) {
+  .btn_padding{
+    padding: 5px !important;
+  }
+  .white{
+    color: #ffffff !important;
+  }
+  html{
+    overflow-x: hidden !important;
+  }
+  .contact_us_padding{
+    padding: 15px;
+  }
+  .pricing_section_title{
+    font-size: 35px !important;
+  }
+  .speaker_header{
+    padding-top: 55px;
+  }
+  .section{
+    padding: 0px !important;
+  }
+  .isNotMobile{
+    display: none;
+  }
+  .isMobile{
+    display: block !important;
+  }
+  #home .home-wrapper{
+    top: 50% !important;
+  }
+  #timer{
+    font-size: 15px !important;
+  }
+  #timer span{
+    font-size: 25px !important;
+    margin: 0px !important;
+  }
   .main-nav {
+    display: none;
     margin: 0px -15px;
     max-height: 0;
     overflow-y: scroll;
@@ -679,7 +721,7 @@ textarea.input {
 }
 
 .event+.event {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .event:after {
@@ -762,6 +804,7 @@ textarea.input {
 .event .event-content {
   padding-left: 160px;
   min-height: 0px;
+  margin-bottom: -50px;
 }
 
 .event .event-time {
@@ -808,8 +851,8 @@ textarea.input {
 
 #contact.section {
   padding-bottom: 0px;
-    padding: 0px;
-    text-align: center;
+  padding: 15px;
+  text-align: center;
 }
 
 .contact {
@@ -1058,3 +1101,4 @@ cursor: pointer;
 .modiva{
   width: 240px !important;
 }
+

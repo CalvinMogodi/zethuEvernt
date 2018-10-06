@@ -12,20 +12,22 @@
 		$('.main-nav').toggleClass('open');
 	});
 
-	// Fixed nav
-	$(window).on('scroll', function() {
-		var wScroll = $(this).scrollTop();
-		wScroll > 50 ? $('#header').addClass('fixed-navbar') : $('#header').removeClass('fixed-navbar');
-	});
-
 	// Smooth scroll
-	$("#menuitemhome").on('click', function(e) {
+	$(document).on('click', 'a[href^="#"]', function(e) {
 		e.preventDefault();
 		var hash = this.hash;
 		$('html, body').animate({
 			scrollTop: $(this.hash).offset().top
 		}, 800);
 	});
+
+	// Fixed nav
+	$(window).on('scroll', function() {
+		var wScroll = $(this).scrollTop();
+		wScroll > 50 ? $('#header').addClass('fixed-navbar') : $('#header').removeClass('fixed-navbar');
+	});
+
+	
 
 	// Section title animation
 	$('.section-title').each(function() {
@@ -46,10 +48,7 @@
 		});
 	});
 
-	// Parallax Background
-	$.stellar({
-		responsive: true
-	});
+	
 
 	// CountTo
 	$('.counter').each(function() {
