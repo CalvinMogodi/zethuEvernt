@@ -49,34 +49,40 @@
       <div class="col-sm-6 contact_us_padding" ><img class="content-image img-fluid d-block mx-auto" alt="" src="../assets/images/map.PNG"></div>
       <div class="col-sm-6">
           
-          <form style="text-align: left;" class="contact_us_padding">
+          <form [formGroup]="contactUsForm" style="text-align: left;" class="contact_us_padding">
               <h3>Leave us a message.</h3>
               <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">Name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+                    <input [(ngModel)]="message.name" [value]="message.name" formControlName="name" (input)="message.name = $event.target.value" type="text" class="form-control" id="name" aria-describedby="emailHelp">
+                    <small *ngIf="!contactUsForm.controls.name.valid && (contactUsForm.controls.name.dirty || submitAttempt)" class="red">The field above is required.</small>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputPassword4">Surname</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter surname">
+                    <input [(ngModel)]="message.surname" [value]="message.surname" formControlName="surname" (input)="message.surname = $event.target.value" type="text" class="form-control" id="surname" aria-describedby="emailHelp">
+                    <small *ngIf="!contactUsForm.controls.surname.valid && (contactUsForm.controls.surname.dirty || submitAttempt)" class="red">The field above is required.</small>
                   </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputEmail4">Contact Number</label>
-                      <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+                      <input [(ngModel)]="message.contactNumber" [value]="message.contactNumber" formControlName="contactNumber" (input)="message.contactNumber = $event.target.value" type="number" class="form-control" id="contactNumber" aria-describedby="emailHelp">
+                      <small *ngIf="!contactUsForm.controls.contactNumber.valid && (contactUsForm.controls.contactNumber.dirty || submitAttempt)" class="red">The field above is required.</small>
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputPassword4">Email Address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      <input [(ngModel)]="message.email" [value]="message.email" formControlName="email" (input)="message.email = $event.target.value" type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                      <small *ngIf="!contactUsForm.controls.email.valid && (contactUsForm.controls.email.dirty || submitAttempt)" class="red">The field above is required.</small>
                     </div>
                   </div>
               <div class="form-group">
                   <label for="exampleInputEmail1">Message</label>
-                  <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
+                  <textarea [(ngModel)]="message.message" [value]="message.message" formControlName="message" (input)="message.message = $event.target.value" class="form-control rounded-0" id="message" rows="3"></textarea>
+                  <small *ngIf="!contactUsForm.controls.message.valid && (contactUsForm.controls.message.dirty || submitAttempt)" class="red">The field above is required.</small>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Submit</button>
+                <div class="modal-footer">                    
+                    <small *ngIf="showError" class="green">Your massage has been sent successfully.</small>
+                    <button type="button" class="btn btn-primary" (click)="sendMessage()">Submit</button>
                   </div>
             </form>
       </div>

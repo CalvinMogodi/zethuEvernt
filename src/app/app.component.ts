@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,16 +11,30 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'zethuevernt';
   description = 'Angular-Firebase Demo';
- 
+  public verificationCode = undefined;
   itemValue = 'worrking';
-  items: Observable<any[]>;
+  public showError = false;
 
+  element: HTMLElement;
   constructor(public db: AngularFireDatabase) {
-    this.items = db.list('items').valueChanges();
+    this.verificationCode = undefined;
   }
 
   onSubmit() {
-    this.db.list('/items').push({ content: this.itemValue });
-    this.itemValue = '';
+    if(this.verificationCode != undefined){
+      let code = this.verificationCode.toLowerCase().trim();
+      this.db.database.ref('/guests/' + code).once('value').then(snapshot => {
+        var user = snapshot.val();
+        if(user != null){
+          this.db.list('/guests/confirmed').push({ content: true });
+          this.element = document.getElementById('closeModel') as HTMLElement;
+          this.element.click();      
+          this.verificationCode = undefined;
+          this.showError = false;
+        }else{
+          this.showError = true;
+        }
+    });    
+    }
   }
 }
