@@ -185,18 +185,48 @@
           </button>
         </div>
         <div class="modal-body">
-            <form>
+            <form *ngIf="!isOpen">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Verification Code</label>
                     <input  [value]="verificationCode" (input)="verificationCode = $event.target.value" type="text"  [(ngModel)]="verificationCode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Code">
                     <small id="emailHelp" class="form-text text-muted" style="font-size:small;text-align:center">Please enter the verification code that you receive on the email.</small>
+                  </div>                 
+              </form>
+              <form *ngIf="isOpen">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
                   </div>
-                 
+                  <div class="form-group">
+                      <label for="exampleInputEmail1">Surname</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter surname">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Phone Number</label>
+                        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+                      </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Confirm Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Confirm email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+              </form>
+              <form *ngIf="showSuc">
+                <div class="form-group">
+                    <label style="color: green;">Congratulations! You have successfully registered.</label>
+                  </div>                 
               </form>
         </div>
         <div class="modal-footer">
             <small *ngIf="showError" style="color: red;font-size:small;text-align:center"> We are unable to confirm your code please make sure that you entered the correct code.</small>
-          <button type="button" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+           
+          <button type="button" (click)="procced()" class="btn btn-primary" *ngIf="!isOpen">Procced</button>
+          <button type="button" (click)="onSubmit()" class="btn btn-primary" *ngIf="isOpen">Submit</button>
+          <button type="button" class="close" data-dismiss="modal" id="closeModel" aria-label="Close" class="btn btn-primary" *ngIf="showSuc">Close</button>
         </div>
       </div>
     </div>
