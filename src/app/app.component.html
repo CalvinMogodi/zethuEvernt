@@ -189,7 +189,7 @@
                 <div class="form-group">
                     <label for="exampleInputEmail1">Verification Code</label>
                     <input  [value]="verificationCode" (input)="verificationCode = $event.target.value" type="text"  [(ngModel)]="verificationCode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Code">
-                    <small id="emailHelp" class="form-text text-muted" style="font-size:small;text-align:center">Please enter the verification code that you receive on the email.</small>
+                    <small *ngIf="codeError" id="emailHelp" class="form-text text-muted" style="color: red !important; font-size:small;text-align:center">Please enter the verification code that you received on the email.</small>
                   </div>                 
               </form>
               <form *ngIf="isOpen && !showSuc" [formGroup]="userForm">
@@ -204,7 +204,7 @@
                       <small *ngIf="!userForm.controls.surname.valid && (userForm.controls.surname.dirty || submitAttempt)" class="red">The field above is required.</small>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Phone Number</label>
+                        <label for="exampleInputEmail1">Contact Number</label>
                         <input [(ngModel)]="guest.contactNumber" [value]="guest.contactNumber" formControlName="contactNumber" (input)="guest.contactNumber = $event.target.value" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
                         <small *ngIf="!userForm.controls.contactNumber.valid && (userForm.controls.contactNumber.dirty || submitAttempt)" class="red">The field above is required.</small>
                       </div>
@@ -224,7 +224,7 @@
             <small *ngIf="showError" style="color: red;font-size:small;text-align:center"> We are unable to confirm your code please make sure that you entered the correct code.</small>
            
           <button type="button" (click)="procced()" class="btn btn-primary" *ngIf="!isOpen">Procced</button>
-          <button type="button" (click)="onSubmit()" class="btn btn-primary" *ngIf="isOpen && !showSuc">Submit</button>
+          <button type="button" (click)="onSubmit()" class="btn btn-primary" *ngIf="isOpen && !showSuc">Confirm</button>
           <button type="button" class="close" data-dismiss="modal" id="closeModel" aria-label="Close" class="btn btn-primary" *ngIf="showSuc">Close</button>
         </div>
       </div>

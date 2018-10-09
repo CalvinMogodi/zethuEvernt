@@ -14,6 +14,7 @@ export class AppComponent {
   itemValue = 'worrking';
   public showError = false;
   public isOpen = false;
+  public codeError = false;
   public showSuc = false;
   public guest = {
     key: '',
@@ -36,6 +37,7 @@ export class AppComponent {
   }
 
   procced() {
+    this.codeError = false;
     if (this.verificationCode != undefined) {
       let code = this.verificationCode.toLowerCase().trim();
       this.db.database.ref('guests').orderByChild("code").equalTo(code).once("value", snapshot => {  
@@ -50,9 +52,11 @@ export class AppComponent {
             this.isOpen = true;
           }else{
             this.isOpen = false;
+            this.codeError = true;
           }
           return true;
         })
+        this.codeError = true;
       });      
     }
   }
