@@ -179,7 +179,7 @@ textarea.input {
 
 .navbar-brand {
   padding: 0;
-  margin: 15px 0px;
+  margin: 10px 0px;
 }
 
 .navbar-brand .logo {
@@ -193,6 +193,10 @@ textarea.input {
 @media only screen and (max-width: 767px) {
   .navbar-brand {
     margin: 15px 15px;
+  }
+
+  .margin_one{
+    margin-left: -1px !important;
   }
 }
 
@@ -358,7 +362,7 @@ textarea.input {
     display: block !important;
   }
   #home .home-wrapper{
-    top: 50% !important;
+    top: 85% !important;
   }
   #timer{
     font-size: 15px !important;
@@ -371,10 +375,17 @@ textarea.input {
     margin: 0px !important;
   }
   .zero-marge{
-    margin-left: 0px !important;
+    margin-top: 50px !important;
+    margin-left: 136px !important;
+  }
+  .font_12{
+    font-size: 12px !important;
   }
   .center{
     text-align: center !important;
+  }
+  .carousel_mobile{
+    margin-top: -35px;
   }
   .menu-backgroud{
     background-color: #4867c0 !important;
