@@ -15,6 +15,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EventmapComponent } from './eventmap/eventmap.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProgrammeComponent,
     SpeakersComponent,
     PackageComponent,
-    ContactusComponent
+    ContactusComponent,
+    EventmapComponent
   ],
   imports: [
     BrowserModule,

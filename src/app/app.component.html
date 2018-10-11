@@ -1,81 +1,95 @@
 <!-- Header -->
 <header id="header" class="transparent-navbar">
   <!-- container -->
-   <!-- Logo -->
-  
-   <div class="navbar-brand" style="    width: -webkit-fill-available;">
-      <a class="logo" href="#">
-        <img class="logo-img" src="../assets/images/logo1.png" alt="logo">
-        <img class="logo-alt-img" src="../assets/images/logo1.png" alt="logo">
-      </a>
-      <!-- Mobile toggle -->
-      <button  data-toggle="collapse" data-target="#mobileMenu" class="navbar-toggle" style="background: transparent; border: none; float: right;">
-          <i class="fa fa-align-justify"></i>
-        </button>
-        <!-- /Mobile toggle -->
-        <div id="mobileMenu" class="collapse">
-            <ul >
-        <li class="nav-item menuitemhome">
-            <a href="#home" class="white">Home</a>
-        </li>
-        <li class="nav-item">
-            <a href="#about" class="white">About</a>
-        </li>
-        <li class="nav-item">
-            <a href="#schedule" class="white">Schedule</a>
-        </li>
-        <li class="nav-item">
-            <a href="#speakers" class="white">Speakers</a>
-        </li>
-        <li class="nav-item">
-            <a href="#package" class="white">Packages</a>
-        </li>
-        <li class="nav-item">
-            <a href="#contact" class="white">Contact Us</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" style="display: initial !important;" class="main-btn btn_padding" data-toggle="modal" data-target="#exampleModal">Register</a>
-        </li>
-      </ul>
-            </div>
-    </div>
-    <!-- /Logo -->
+  <!-- Logo -->
+
+  <div class="navbar-brand" style="width: -webkit-fill-available;">
+    <a class="logo" href="#">
+      <img class="logo-img" src="../assets/images/logo1.png" alt="logo">
+      <img class="logo-alt-img" src="../assets/images/logo1.png" alt="logo">
+      <div id="timer">
+        <!--  <h3 style="color: white;">20-21 November 2018</h3> -->
+        <span id="days">{{days}}</span>days
+        <span id="hours">{{hours}}</span>hours
+        <span id="minutes">{{minutes}}</span>min
+        <span id="seconds">{{seconds}}</span>sec
+      </div>
+    </a>
+
+  </div>
+  <!-- Mobile toggle -->
+  <button data-toggle="collapse" data-target="#mobileMenu" class="navbar-toggle" style="background: transparent; margin-top: -10px; border: none; float: right;">
+    <i class="fa fa-align-justify"></i>
+  </button>
+  <!-- /Mobile toggle -->
+  <div id="mobileMenu" class="collapse">
+    <ul>
+      <li class="nav-item menuitemhome">
+        <a href="#home" class="white">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#about" class="white">About</a>
+      </li>
+      <li class="nav-item">
+        <a href="#schedule" class="white">Schedule</a>
+      </li>
+      <li class="nav-item">
+        <a href="#speakers" class="white">Speakers</a>
+      </li>
+      <li class="nav-item">
+        <a href="#package" class="white">Event Packages</a>
+      </li>
+      <li class="nav-item">
+        <a href="#eventmap" class="white">Event Map</a>
+      </li>
+      <li class="nav-item">
+        <a href="#contact" class="white">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" style="display: initial !important;" class="main-btn btn_padding" data-toggle="modal" data-target="#exampleModal">Register</a>
+      </li>
+    </ul>
+  </div>
+  <!-- /Logo -->
   <div class="container">
     <!-- navbar header -->
     <div class="navbar-header">
-     
 
-      
-   
-    <!-- /navbar header -->
 
-    <!-- Navigation -->
-    <ul class="nav main-nav navbar-right" id="nav" style="float: right!important;  margin-right: -15px;     margin-top: -68px;
+
+
+      <!-- /navbar header -->
+
+      <!-- Navigation -->
+      <ul class="nav main-nav navbar-right" id="nav" style="float: right!important;  margin-right: -200px; margin-top: -68px;
     padding: 15px;">
         <li class="nav-item menuitemhome" id="menuitemhome">
-            <a href="#home">Home</a>
+          <a href="#home">Home</a>
         </li>
         <li class="nav-item">
-            <a href="#about">About</a>
+          <a href="#about">About</a>
         </li>
         <li class="nav-item">
-            <a href="#schedule">Schedule</a>
+          <a href="#schedule">Schedule</a>
         </li>
         <li class="nav-item">
-            <a href="#speakers">Speakers</a>
+          <a href="#speakers">Speakers</a>
         </li>
         <li class="nav-item">
-            <a href="#package">Packages</a>
+          <a href="#package">Event Packages</a>
         </li>
         <li class="nav-item">
-            <a href="#contact">Contact Us</a>
+          <a href="#eventmap">Event Map</a>
         </li>
         <li class="nav-item">
-            <a href="#" style="display: initial !important;" class="main-btn" data-toggle="modal" data-target="#exampleModal">Register</a>
+          <a href="#contact">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" style="display: initial !important;" class="main-btn" data-toggle="modal" data-target="#exampleModal">Register</a>
         </li>
       </ul>
     </div>
-   <!-- <nav id="nav">
+    <!-- <nav id="nav">
       <ul class="main-nav nav navbar-nav navbar-right">
         <li  id="menuitemhome"><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -95,10 +109,10 @@
 <!-- Home -->
 <div id="home">
   <!-- background image -->
-  <img class="isNotMobile" height="100%" width="100%" src="../assets/images/background.PNG"/>
-   <!--<div class="section-bg" height="30px" width="100%" style="background-image:url(../assets/images/background.PNG)" data-stellar-background-ratio="0.5"></div>
+  <img class="isNotMobile" height="100%" width="100%" src="../assets/images/background.PNG" />
+  <!--<div class="section-bg" height="30px" width="100%" style="background-image:url(../assets/images/background.PNG)" data-stellar-background-ratio="0.5"></div>
   /background image -->
-  <img class="isMobile" height="100%" width="100%" src="../assets/images/background_mobile.PNG"/>
+  <img class="isMobile" height="100%" width="100%" src="../assets/images/background_mobile.PNG" />
   <!-- home wrapper -->
   <div class="home-wrapper">
     <app-home></app-home>
@@ -139,6 +153,14 @@
 </div>
 <!-- /Package -->
 
+<!-- Event Map -->
+<div id="eventmap" class="section" style="padding: 0px !important;">
+  <!-- container -->
+  <app-eventmap></app-eventmap>
+  <!-- /container -->
+</div>
+<!-- /Event Map -->
+
 <!-- Contact Us -->
 <div id="contact" class="section">
   <!-- container -->
@@ -175,281 +197,386 @@
 <!-- /Footer -->
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Register</h5>
-          <button type="button" class="close" data-dismiss="modal" id="closeModel" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form *ngIf="!isOpen">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Verification Code</label>
-                    <input  [value]="verificationCode" (input)="verificationCode = $event.target.value" type="text"  [(ngModel)]="verificationCode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Code">
-                    <small *ngIf="codeError" id="emailHelp" class="form-text text-muted" style="color: red !important; font-size:small;text-align:center">Please enter the verification code that you received on the email.</small>
-                  </div>                 
-              </form>
-              <form *ngIf="isOpen && !showSuc" [formGroup]="userForm">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Name</label>
-                    <input [(ngModel)]="guest.name" [value]="guest.name" formControlName="name" (input)="guest.name = $event.target.value" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
-                    <small *ngIf="!userForm.controls.name.valid && (userForm.controls.name.dirty || submitAttempt)" class="red">The field above is required.</small>
-                  </div>
-                  <div class="form-group">
-                      <label for="exampleInputEmail1">Surname</label>
-                      <input [(ngModel)]="guest.surname" [value]="guest.surname" formControlName="surname" (input)="guest.surname = $event.target.value" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter surname">
-                      <small *ngIf="!userForm.controls.surname.valid && (userForm.controls.surname.dirty || submitAttempt)" class="red">The field above is required.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Contact Number</label>
-                        <input [(ngModel)]="guest.contactNumber" [value]="guest.contactNumber" formControlName="contactNumber" (input)="guest.contactNumber = $event.target.value" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
-                        <small *ngIf="!userForm.controls.contactNumber.valid && (userForm.controls.contactNumber.dirty || submitAttempt)" class="red">The field above is required.</small>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+        <button type="button" class="close" data-dismiss="modal" id="closeModel" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form *ngIf="!isOpen">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Verification Code</label>
+            <input [value]="verificationCode" (input)="verificationCode = $event.target.value" type="text" [(ngModel)]="verificationCode"
+              class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Code">
+            <small *ngIf="codeError" id="emailHelp" class="form-text text-muted" style="color: red !important; font-size:small;text-align:center">Please
+              enter the verification code that you received on the email.</small>
+          </div>
+        </form>
+        <form *ngIf="isOpen && !showSuc" [formGroup]="userForm">
+          
+          <div  class="form-row">
+              <div class="form-group col-md-2">
+                  <label for="inputEmail4">Title</label>
+                  <div class="dropdown show" >
+                      <a class="btn btn-secondary dropdown-toggle" style="background-color: transparent;
+                      color: #4e555b;
+                      border-color: #ced4da;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        {{titleText}}
+                      </a>          
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#" (click)="setTitle('Mr')">Mr</a>
+                        <a class="dropdown-item" href="#" (click)="setTitle('Mrs')">Mrs</a>
+                        <a class="dropdown-item" href="#" (click)="setTitle('Miss')">Miss</a>
+                        <a class="dropdown-item" href="#" (click)="setTitle('Ms')">Ms</a>
+                        <a class="dropdown-item" href="#" (click)="setTitle('Mx')">Mx</a>
+                        <a class="dropdown-item" href="#" (click)="setTitle('Sir')">Sir</a>
+                        <a class="dropdown-item" href="#" (click)="setTitle('Dr')">Dr</a>
                       </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input [(ngModel)]="guest.email" [value]="guest.email" formControlName="email" (input)="guest.email = $event.target.value" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                  <small *ngIf="!userForm.controls.email.valid && (userForm.controls.email.dirty || submitAttempt)" class="red">The field above is required.</small>
+                    </div>
                 </div>
-              </form>
-              <form *ngIf="showSuc">
-                <div class="form-group">
-                    <label style="color: green;">Congratulations! You are now successfully registered.</label>
-                  </div>                 
-              </form>
+                <div class="form-group col-md-10">
+            <label for="exampleInputEmail1">Name</label>
+            <input [(ngModel)]="guest.name" [value]="guest.name" formControlName="name" (input)="guest.name = $event.target.value" type="text"
+              class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+            <small *ngIf="!userForm.controls.name.valid && (userForm.controls.name.dirty || submitAttempt)" class="red">The
+              field above is required.</small>
+          </div>
         </div>
-        <div class="modal-footer">
-            <small *ngIf="showError" style="color: red;font-size:small;text-align:center"> We are unable to confirm your code please make sure that you entered the correct code.</small>
-           
-          <button type="button" (click)="procced()" class="btn btn-primary" *ngIf="!isOpen">Procced</button>
-          <button type="button" (click)="onSubmit()" class="btn btn-primary" *ngIf="isOpen && !showSuc">Confirm</button>
-          <button type="button" class="close" data-dismiss="modal" id="closeModel" aria-label="Close" class="btn btn-primary" *ngIf="showSuc">Close</button>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Surname</label>
+            <input [(ngModel)]="guest.surname" [value]="guest.surname" formControlName="surname" (input)="guest.surname = $event.target.value"
+              type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter surname">
+            <small *ngIf="!userForm.controls.surname.valid && (userForm.controls.surname.dirty || submitAttempt)" class="red">The
+              field above is required.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Organization</label>
+            <input [(ngModel)]="guest.organization" [value]="guest.organization" formControlName="organization" (input)="guest.organization = $event.target.value"
+              type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Organization">
+            <small *ngIf="!userForm.controls.organization.valid && (userForm.controls.organization.dirty || submitAttempt)" class="red">The
+              field above is required.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Role/ Title</label>
+            <input [(ngModel)]="guest.role" [value]="guest.role" formControlName="role" (input)="guest.role = $event.target.value" type="text"
+              class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Role/ Title">
+            <small *ngIf="!userForm.controls.role.valid && (userForm.controls.role.dirty || submitAttempt)" class="red">The
+              field above is required.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email Address</label>
+            <input [(ngModel)]="guest.email" [value]="guest.email" formControlName="email" (input)="guest.email = $event.target.value"
+              type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small *ngIf="!userForm.controls.email.valid && (userForm.controls.email.dirty || submitAttempt)" class="red">The
+              field above is required.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Contact Number</label>
+            <input [(ngModel)]="guest.contactNumber" [value]="guest.contactNumber" formControlName="contactNumber" (input)="guest.contactNumber = $event.target.value"
+              type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+            <small *ngIf="!userForm.controls.contactNumber.valid && (userForm.controls.contactNumber.dirty || submitAttempt)" class="red">The
+              field above is required.</small>
+          </div>
+        </form>
+        <form *ngIf="showSuc">
+          <div class="form-group">
+            <label style="color: green;">Congratulations! You are now successfully registered.</label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <small *ngIf="showError" style="color: red;font-size:small;text-align:center"> We are unable to confirm your code
+          please make sure that you entered the correct code.</small>
+
+        <button type="button" (click)="procced()" class="btn btn-primary" *ngIf="!isOpen">Procced</button>
+        <button type="button" (click)="onSubmit()" class="btn btn-primary" *ngIf="isOpen && !showSuc">Confirm</button>
+        <button type="button" class="close" data-dismiss="modal" id="closeModel" aria-label="Close" class="btn btn-primary" *ngIf="showSuc">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="package1Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bronze Partnership @ R10 000.00</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>Bronze Partnership Package will include one of the followings:</label>
+        <div class="row">
+          <div class="col-lg-6">
+            <p style="font-size: 12px;">
+              <b>Conference Tote Bag </b><br> • Distributed to all attendees and exhibitors upon arrival at the conference
+              with your marketing and promotional material
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <p style="font-size: 12px;">
+              • Full page and colour advertisement in the Public Private Partnership Conference Workbook and Website. The workbook will
+              be distributed to all conference attendees and exhibitors.<br> • One (1) representative from
+              the partnering organisation to attend the entire conference with the freedom to purchase extra tickets for
+              a table that can be branded. <br> • Your company’s corporate logo displayed in ads and materials promoting
+              the conference as well as on signage at the conference that recognizes your company as a partner.<br> • Description
+              of your company’s products and services with your corporate logo displayed in the National Treasury’s Public
+              Private Partnership Conference workbook, distributed to all attendees and exhibitors.<br> • Exhibit space at
+              the conference to “meet and greet” current and prospective clients, and to distribute your company’s marketing
+              materials.<br> • Conference attendee list with names, addresses and phone numbers (available week of conference)<br>
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="package2Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Silver Partnership @ R25 000.00</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>Silver Partnership Package will include one of the followings:</label>
+        <div class="row">
+          <div class="col-lg-6">
+            <p style="font-size: 12px;">
+              <b> Refreshment break</b><br> • Signs at the refreshment break to promote your company as the partner.<br><br>
+              <b> Pocket Agenda </b><br> • Your company logo will be featured on the cover of the onsite pocket agenda, which
+              is distributed to all participants.
+
+
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <p style="font-size: 12px;">
+              • Full page and colour advertisement in the Public Private Partnership Conference Workbook and Website. The workbook will
+              be distributed to all conference attendees and exhibitors.<br> • Up to three (3) representatives
+              from the partnering organisation to attend the entire conference and Gala Dinner with the freedom to purchase
+              extra tickets for a table that can be branded. <br> • Your company’s corporate logo displayed in ads and materials
+              promoting the conference as well as on signage at the conference that recognizes your company as a partner.<br>              •
+              Description of your company’s products and services with your corporate logo displayed in the National Treasury’s
+              Public Private Partnership Conference workbook, distributed to all attendees and exhibitors.<br>
+
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="package3Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Gold Partnership @ R50 000.00</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>Gold Partnership Package will include one of the followings:</label>
+        <div class="row">
+          <div class="col-lg-6">
+            <p style="font-size: 12px;">
+              <b>Conference Tote Bag </b><br> • Distributed to all attendees and exhibitors upon arrival at the conference
+              with your marketing and promotional material <br><br>
+              <b>Conference Workbook </b><br> • The cover of the workbook (in colour) features artwork and/or logo as determined
+              by your company and is distributed to all attendees and exhibitors upon arrival at the conference. <br><br>
+              <b>Your Company banner </b><br> • Includes 3 pull-up banners to be placed at the entrance of the conference
+              venue. They will be strategically placed on the way to the exhibit hall or in the registration area. Art work
+              is submitted by client <br><br>
+              <b>Luncheon Reception </b><br> • Signs at the luncheon reception promote your company as the partner. <br>              •
+              A reserved table will be set up for company and guests. <br><br>
+              <b>Portfolio Jackets </b><br> • The cover of the Portfolio Jackets, with writing pad, will feature artwork
+              and/or logo as determined by your company and are placed at each setting during the sessions <br><br>
+              <b>Gala Dinner </b><br> • Reserved table for up to 5 people at VIP section
+
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <p style="font-size: 12px;">
+              • Full page and colour advertisement in the Public Private Partnership Conference Workbook and Website. The workbook will
+              be distributed to all conference attendees and exhibitors.<br> • Up to five (5) representatives
+              from the partnering organisation to attend the entire conference and Gala Dinner with the freedom to purchase
+              extra tickets for a table that can be branded.<br> • Your company’s corporate logo displayed in ads and materials
+              promoting the conference as well as on signage at the conference that recognises your company as a partner.<br>              •
+              Description of your company’s products and services with your corporate logo displayed in the National Coast
+              Public Private Partnership Conference workbook, distributed to all attendees and exhibitors.<br> • Exhibit
+              space at the conference to show case products and services.<br> • Conference attendee list with names, addresses
+              and phone numbers (available week of conference).<br> • Company logo to appear on all marketing platforms (social
+              and printed media) <br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="package3Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Gold Partnership @ R50 000.00</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>Gold Partnership Package will include one of the followings:</label>
+        <div class="row">
+          <div class="col-lg-6">
+            <p style="font-size: 12px;">
+              <b>Conference Tote Bag </b><br> • Distributed to all attendees and exhibitors upon arrival at the conference
+              with your marketing and promotional material <br><br>
+              <b>Conference Workbook </b><br> • The cover of the workbook (in colour) features artwork and/or logo as determined
+              by your company and is distributed to all attendees and exhibitors upon arrival at the conference. <br><br>
+              <b>Your Company banner </b><br> • Includes 3 pull-up banners to be placed at the entrance of the conference
+              venue. They will be strategically placed on the way to the exhibit hall or in the registration area. Art work
+              is submitted by client <br><br>
+              <b>Luncheon Reception </b><br> • Signs at the luncheon reception promote your company as the partner. <br>              •
+              A reserved table will be set up for company and guests. <br><br>
+              <b>Portfolio Jackets </b><br> • The cover of the Portfolio Jackets, with writing pad, will feature artwork
+              and/or logo as determined by your company and are placed at each setting during the sessions <br><br>
+              <b>Gala Dinner </b><br> • Reserved table for up to 5 people at VIP section
+
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <p style="font-size: 12px;">
+              • Full page and colour advertisement in the Public Private Partnership Conference Workbook and Website. The workbook will
+              be distributed to all conference attendees and exhibitors.<br> • Up to five (5) representatives
+              from the partnering organisation to attend the entire conference and Gala Dinner with the freedom to purchase
+              extra tickets for a table that can be branded.<br> • Your company’s corporate logo displayed in ads and materials
+              promoting the conference as well as on signage at the conference that recognises your company as a partner.<br>              •
+              Description of your company’s products and services with your corporate logo displayed in the National Coast
+              Public Private Partnership Conference workbook, distributed to all attendees and exhibitors.<br> • Exhibit
+              space at the conference to show case products and services.<br> • Conference attendee list with names, addresses
+              and phone numbers (available week of conference).<br> • Company logo to appear on all marketing platforms (social
+              and printed media) <br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="package4Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Platinum Partnership @ R100 000.00</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>Partnership Package will include one of the followings:</label>
+        <div class="row">
+          <div class="col-lg-6">
+            <p style="font-size: 12px;">
+              <b> Breakfast Reception </b><br> • Your company acts as lead partner for our breakfast reception held at the
+              conference venue.<br> • Signs at the breakfast reception promote your company as the partner.<br> • A reserved
+              table will be set up for company and guests.<br><br>
+              <b>Luncheon Reception </b><br> • Your company acts as lead partner for our luncheon reception held at the conference
+              venue.<br> • Signs at the luncheon reception promote your company as the partner.<br> • A reserved table will
+              be set up for company and guests.<br> • Your company will address the audience and introduce the key note speaker.<br><br>
+              <b>Gala Dinner </b><br> • Reserved table for up to 10 people at VIP section <br> • 5 -10 minutes slot to address
+              the audience <br> • Company logos or adverting material displayed on the screens <br><br>
+              <b>Registration Booth </b><br> • Have your name seen first by partnering the Registration Booth that welcomes
+              all conference participants.<br><br>
+              <b> Exclusivity </b><br> • Exclusive partnering rights – thus not being in the same room with your competitor.
+              <br>
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <p style="font-size: 12px;">
+              • Full page and colour advertisement in the Public Private Partnership Conference Workbook and Website. The workbook will
+              be distributed to all conference attendees and exhibitors. <br> • Company logo to appear on all
+              marketing platforms (social and printed media) <br> • Company logo to be included on the bill boards which
+              will be used when marketing the event in the city <br> • Up to ten (10) representatives from the partnering
+              organisation to attend the entire conference and Gala Dinner.<br> • Your company’s corporate logo displayed
+              in ads and materials promoting the conference as well as on signage at the conference that recognises your
+              company as a platinum level partner.<br> • Description of your company’s products and services with your corporate
+              logo displayed in the National Treasury’s Public Private Partnership Conference workbook, distributed to all
+              attendees and exhibitors.<br> • Exhibit space at the conference to show case products and services.<br> • Receive
+              conference attendance register contact details<br> • Includes 2 full wall banners at the stage next to the
+              conference banners. Art work is submitted by client<br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="speaker1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Mzwandile Masina</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            Ekurhuleni Mayor
         </div>
       </div>
     </div>
   </div>
 
   <!-- Modal -->
- <div class="modal fade" id="package1Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+<div class="modal fade" id="speaker2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Bronze Partnership @ R10 000.00</h5>
+          <h5 class="modal-title" id="exampleModalLabel">David Makhura</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            <label>Bronze Partnership Package will include one of the followings:</label>
-            <div class="row">             
-                <div class="col-lg-6">                  
-                  <p style="font-size: 12px;">
-                      <b>Conference Tote Bag </b><br>
-                        •	Distributed to all attendees and exhibitors upon arrival at the conference with your marketing and promotional material 
-                  </p>
-                  </div>
-                  <div class="col-lg-6">
-                      <p style="font-size: 12px;">
-                          •	Full page and colour advertisement in the Public Private Partnership Conference Workbook and Website. The workbook will be distributed to all conference attendees and exhibitors.<br>
-                          •	One (1) representative from the partnering organisation to attend the entire conference with the freedom to purchase extra tickets for a table that can be branded. <br>
-                          •	Your company’s corporate logo displayed in ads and materials promoting the conference as well as on signage at the conference that recognizes your company as a partner.<br>
-                          •	Description of your company’s products and services with your corporate logo displayed in the National Treasury’s Public Private Partnership Conference workbook, distributed to all attendees and exhibitors.<br>
-                          •	Exhibit space at the conference to “meet and greet” current and prospective clients, and to distribute your company’s marketing materials.<br>
-                          •	Conference attendee list with names, addresses and phone numbers (available week of conference)<br>
-                          
-                       </p>
-                    </div>
-            </div>            
+            Gauteng Premier
         </div>
       </div>
     </div>
   </div>
 
   <!-- Modal -->
- <div class="modal fade" id="package2Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+<div class="modal fade" id="speaker3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Silver Partnership @ R25 000.00</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Cyril Ramaphosa</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            <label>Silver Partnership Package will include one of the followings:</label>
-            <div class="row">             
-                <div class="col-lg-6">                  
-                  <p style="font-size: 12px;">
-                     <b> Refreshment break</b><br>
-•	Signs at the refreshment break to promote your company as the partner.<br><br>
-<b> Pocket Agenda </b><br>
-•	Your company logo will be featured on the cover of the onsite pocket agenda, which is distributed to all participants.
-
-                   
-                  </p>
-                  </div>
-                  <div class="col-lg-6">
-                      <p style="font-size: 12px;">
-                          •	Full page and colour advertisement in the Public Private Partnership Conference Workbook and Website. The workbook will be distributed to all conference attendees and exhibitors.<br>
-•	Up to three (3) representatives from the partnering organisation to attend the entire conference and Gala Dinner with the freedom to purchase extra tickets for a table that can be branded.  <br>
-•	Your company’s corporate logo displayed in ads and materials promoting the conference as well as on signage at the conference that recognizes your company as a partner.<br>
-•	Description of your company’s products and services with your corporate logo displayed in the National Treasury’s Public Private Partnership Conference workbook, distributed to all attendees and exhibitors.<br>
-
-
-                       </p>
-                    </div>
-            </div>            
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal -->
- <div class="modal fade" id="package3Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Gold Partnership @ R50 000.00</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <label>Gold Partnership Package will include one of the followings:</label>
-            <div class="row">             
-                <div class="col-lg-6">                  
-                  <p style="font-size: 12px;">
-                      <b>Conference Tote Bag </b><br>
-•	Distributed to all attendees and exhibitors upon arrival at the conference with your marketing and promotional material <br><br>
-<b>Conference Workbook </b><br>
-•	The cover of the workbook (in colour) features artwork and/or logo as determined by your company and is distributed to all attendees and exhibitors upon arrival at the conference. <br><br>
-<b>Your Company banner  </b><br>
-•	Includes 3 pull-up banners to be placed at the entrance of the conference venue. They will be strategically placed on the way to the exhibit hall or in the registration area. Art work is submitted by client <br><br>
-<b>Luncheon Reception  </b><br>
-•	Signs at the luncheon reception promote your company as the partner. <br>
-•	A reserved table will be set up for company and guests. <br><br>
-<b>Portfolio Jackets  </b><br>
-•	The cover of the Portfolio Jackets, with writing pad, will feature artwork and/or logo as determined by your company and are placed at each setting during the sessions <br><br>
-<b>Gala Dinner  </b><br>
-•	Reserved table for up to 5 people at VIP section 
-                   
-                  </p>
-                  </div>
-                  <div class="col-lg-6">
-                      <p style="font-size: 12px;">
-                          •	Full page and colour advertisement in the Public Private Partnership Conference Workbook and Website. The workbook will be distributed to all conference attendees and exhibitors.<br>  
-                          •	Up to five (5) representatives from the partnering organisation to attend the entire conference and Gala Dinner with the freedom to purchase extra tickets for a table that can be branded.<br>  
-                          •	Your company’s corporate logo displayed in ads and materials promoting the conference as well as on signage at the conference that recognises your company as a partner.<br>  
-                          •	Description of your company’s products and services with your corporate logo displayed in the National Coast Public Private Partnership Conference workbook, distributed to all attendees and exhibitors.<br>  
-                          •	Exhibit space at the conference to show case products and services.<br>  
-                          •	Conference attendee list with names, addresses and phone numbers (available week of conference).<br>  
-                          •	Company logo to appear on all marketing platforms (social and printed media) <br>  
-                       </p>
-                    </div>
-            </div>            
-        </div>
-      </div>
-    </div>
-  </div>
-
-
- <!-- Modal -->
- <div class="modal fade" id="package3Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Gold Partnership @ R50 000.00</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <label>Gold Partnership Package will include one of the followings:</label>
-            <div class="row">             
-                <div class="col-lg-6">                  
-                  <p style="font-size: 12px;">
-                      <b>Conference Tote Bag </b><br>
-•	Distributed to all attendees and exhibitors upon arrival at the conference with your marketing and promotional material <br><br>
-<b>Conference Workbook </b><br>
-•	The cover of the workbook (in colour) features artwork and/or logo as determined by your company and is distributed to all attendees and exhibitors upon arrival at the conference. <br><br>
-<b>Your Company banner  </b><br>
-•	Includes 3 pull-up banners to be placed at the entrance of the conference venue. They will be strategically placed on the way to the exhibit hall or in the registration area. Art work is submitted by client <br><br>
-<b>Luncheon Reception  </b><br>
-•	Signs at the luncheon reception promote your company as the partner. <br>
-•	A reserved table will be set up for company and guests. <br><br>
-<b>Portfolio Jackets  </b><br>
-•	The cover of the Portfolio Jackets, with writing pad, will feature artwork and/or logo as determined by your company and are placed at each setting during the sessions <br><br>
-<b>Gala Dinner  </b><br>
-•	Reserved table for up to 5 people at VIP section 
-                   
-                  </p>
-                  </div>
-                  <div class="col-lg-6">
-                      <p style="font-size: 12px;">
-                          •	Full page and colour advertisement in the Public Private Partnership Conference Workbook and Website. The workbook will be distributed to all conference attendees and exhibitors.<br>  
-                          •	Up to five (5) representatives from the partnering organisation to attend the entire conference and Gala Dinner with the freedom to purchase extra tickets for a table that can be branded.<br>  
-                          •	Your company’s corporate logo displayed in ads and materials promoting the conference as well as on signage at the conference that recognises your company as a partner.<br>  
-                          •	Description of your company’s products and services with your corporate logo displayed in the National Coast Public Private Partnership Conference workbook, distributed to all attendees and exhibitors.<br>  
-                          •	Exhibit space at the conference to show case products and services.<br>  
-                          •	Conference attendee list with names, addresses and phone numbers (available week of conference).<br>  
-                          •	Company logo to appear on all marketing platforms (social and printed media) <br>  
-                       </p>
-                    </div>
-            </div>            
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal -->
-<div class="modal fade" id="package4Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Platinum Partnership @ R100 000.00</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <label>Partnership Package will include one of the followings:</label>
-            <div class="row">             
-                <div class="col-lg-6">                  
-                  <p style="font-size: 12px;">
-                      <b> Breakfast Reception </b><br>
-                      •	Your company acts as lead partner for our breakfast reception held at the conference venue.<br>
-                      •	Signs at the breakfast reception promote your company as the partner.<br>
-                      •	A reserved table will be set up for company and guests.<br><br>
-                      <b>Luncheon Reception  </b><br>
-                      •	Your company acts as lead partner for our luncheon reception held at the conference venue.<br>
-                      •	Signs at the luncheon reception promote your company as the partner.<br>
-                      •	A reserved table will be set up for company and guests.<br>
-                      •	Your company will address the audience and introduce the key note speaker.<br><br>
-                      <b>Gala Dinner  </b><br>
-                      •	Reserved table for up to 10 people at VIP section <br>
-                      •	5 -10 minutes slot to address the audience <br>
-                      •	Company logos or adverting material displayed on the screens <br><br>
-                      <b>Registration Booth  </b><br>
-                      •	Have your name seen first by partnering the Registration Booth that welcomes all conference participants.<br><br>
-                      <b> Exclusivity  </b><br>
-                      •	Exclusive partnering rights – thus not being in the same room with your competitor. <br>                      
-                  </p>
-                  </div>
-                  <div class="col-lg-6">
-                      <p style="font-size: 12px;">
-                          •	Full page and colour advertisement in the Public Private Partnership Conference Workbook and Website. The workbook will be distributed to all conference attendees and exhibitors. <br>
-                          •	Company logo to appear on all marketing platforms (social and printed media) <br>
-                          •	Company logo to be included on the bill boards which will be used when marketing the event in the city <br>
-                          •	Up to ten (10) representatives from the partnering organisation to attend the entire conference and Gala Dinner.<br>
-                          •	Your company’s corporate logo displayed in ads and materials promoting the conference as well as on signage at the conference that recognises your company as a platinum level partner.<br>
-                          •	Description of your company’s products and services with your corporate logo displayed in the National Treasury’s Public Private Partnership Conference workbook, distributed to all attendees and exhibitors.<br>
-                          •	Exhibit space at the conference to show case products and services.<br>
-                          •	Receive conference attendance register contact details<br>
-                          •	Includes 2 full wall banners at the stage next to the conference banners. Art work is submitted by client<br>
-                       </p>
-                    </div>
-            </div>            
+            President of the Republic
         </div>
       </div>
     </div>

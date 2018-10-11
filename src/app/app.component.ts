@@ -16,16 +16,23 @@ export class AppComponent {
   public isOpen = false;
   public codeError = false;
   public showSuc = false;
+  public titleText = 'Title';
   public guest = {
     key: '',
     name: '',
     surname: '',
     contactNumber: '',
     email: '',
+    role: '',
+    organization: '',
   };
   public submitAttempt = false;
   userForm: FormGroup;
-
+  public timer = 0;
+  public days = 0;
+  public hours = 0;
+  public minutes = 0;
+  public seconds = 0;
   constructor(public formBuilder: FormBuilder, public db: AngularFireDatabase) {
     this.verificationCode = undefined;
     this.userForm = formBuilder.group({
@@ -33,7 +40,15 @@ export class AppComponent {
       surname: ['', Validators.compose([Validators.required])],
       contactNumber: ['', Validators.compose([Validators.required])],
       email: ['', Validators.compose([Validators.required])],
+      role: ['', Validators.compose([Validators.required])],
+      organization: ['', Validators.compose([Validators.required])],
     });
+    
+    this.timerTick();
+  }
+
+  setTitle(text){
+    this.titleText = text;
   }
 
   procced() {
@@ -73,5 +88,31 @@ export class AppComponent {
       this.showSuc = true;
       this.showError = false;
     }    
+  }
+
+  timerTick() {
+    setTimeout(() => {
+      let toDate = new Date("2018/11/20 8:00 AM");
+      //let toDate = new Date("2018/10/0 15:4 PM");
+      var now = new Date();
+      var difference = toDate.getTime() - now.getTime();
+      if (difference <= 0 || isNaN(difference)) { return; }
+      var seconds = Math.floor(difference / 1000);
+      var minutes = Math.floor(seconds / 60);
+      var hours = Math.floor(minutes / 60);
+      var days = Math.floor(hours / 24);
+  
+      hours %= 24;
+      minutes %= 60;
+      seconds %= 60;
+  
+      this.days = days;
+      this.hours = hours;
+      this.minutes = minutes;
+      this.seconds = seconds;
+      if (difference > 0) {
+        this.timerTick();
+      }
+    }, 1000);
   }
 }
