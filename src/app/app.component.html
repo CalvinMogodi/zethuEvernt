@@ -193,7 +193,7 @@
         <form *ngIf="!isOpen">
           <div class="form-group">
             <label for="exampleInputEmail1">Verification Code</label>
-            <input [value]="verificationCode" (input)="verificationCode = $event.target.value" type="text" [(ngModel)]="verificationCode"
+            <input [value]="verificationCode" [ngModelOptions]="{standalone: true}" (input)="verificationCode = $event.target.value" type="text" [(ngModel)]="verificationCode"
               class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Code">
             <small *ngIf="codeError" id="emailHelp" class="form-text text-muted" style="color: red !important; font-size:small;text-align:center">Please
               enter the verification code that you received on the email.</small>
