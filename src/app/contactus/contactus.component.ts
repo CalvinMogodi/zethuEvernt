@@ -12,6 +12,8 @@ export class ContactusComponent implements OnInit {
   public str = false;
   public showError = false;
   public submitAttempt = false;
+  lat: number = 51.678418;
+  lng: number = 7.809007;
   public message = {
     name: '',
     surname: '',

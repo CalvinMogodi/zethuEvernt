@@ -16,6 +16,7 @@ import { environment } from '../environments/environment';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EventmapComponent } from './eventmap/eventmap.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,10 @@ import { EventmapComponent } from './eventmap/eventmap.component';
     AngularFireDatabaseModule, // for database
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAntCeYUauXnYIBuZCmxFEfoYExjeBLG4M'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

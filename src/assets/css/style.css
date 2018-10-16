@@ -50,6 +50,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
+.nav-item{
+  font-size: 13px;
+}
+
 h1 {
   font-size: 43px;
 }
@@ -80,6 +84,21 @@ a:hover, a:focus {
   text-decoration: none;
   outline: none;
   color: #101e45;
+}
+
+.home_background{
+  text-align: center;
+  padding-top: 15%;
+  background-color: #4867c0 !important;
+  background-image: linear-gradient(to right, #151e39, #4867c0) !important;
+  background: #151e39 !important;
+  background: linear-gradient(to right, #151e39, #4867c0) !important;
+  color: #FFF;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
 }
 
 ul, ol {
@@ -360,6 +379,7 @@ textarea.input {
   }
   .isMobile{
     display: block !important;
+    margin-top: 25% !important;
   }
   #home .home-wrapper{
     top: 85% !important;
@@ -371,7 +391,7 @@ textarea.input {
     float: none !important;
   }
   #timer span{
-    font-size: 25px !important;
+    font-size: 34px !important;
     margin: 0px !important;
   }
   .zero-marge{
@@ -385,7 +405,19 @@ textarea.input {
     text-align: center !important;
   }
   .carousel_mobile{
-    margin-top: -35px;
+    background: white;
+    text-align: center;
+    position: fixed;
+    bottom: -96px !important;
+    width: 100%;
+  }
+
+  .home_background {
+
+  }
+
+  .img_height_m{
+    margin-left: 0% !important;
   }
   .menu-backgroud{
     background-color: #4867c0 !important;

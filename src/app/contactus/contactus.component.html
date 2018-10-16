@@ -20,20 +20,20 @@
       </div>
       <!-- /contact -->
 
-      <!-- contact -->
+      <!-- contact 
       <div class="col-sm-2">
         <div class="contact">
           <h4>Phone</h4>
           <p>011 123 4567</p>
         </div>
       </div>
-      <!-- /contact -->
+    /contact -->
 
       <!-- contact -->
       <div class="col-sm-4">
         <div class="contact">
           <h4>Email</h4>
-          <a href="mailto:info@mail.com">info@mail.com</a>
+          <a href="mailto:info@coe-pppinvest.com">info@coe-pppinvest.com</a>
         </div>
         
       </div>
@@ -46,7 +46,11 @@
   <!-- Map -->
   <div>
     <div class="row">
-      <div class="col-sm-6 contact_us_padding" ><img class="content-image img-fluid d-block mx-auto" alt="" src="../assets/images/map.PNG"></div>
+      <div class="col-sm-6 contact_us_padding" >
+          <agm-map [latitude]="lat" [longitude]="lng">
+              <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+      </div>
       <div class="col-sm-6">
           
           <form [formGroup]="contactUsForm" style="text-align: left;" class="contact_us_padding">
