@@ -47,10 +47,16 @@
   <div>
     <div class="row">
       <div class="col-sm-6 contact_us_padding" >
-          <agm-map [latitude]="lat" [longitude]="lng">
+          <div class="col-sm-12 contact_us_padding" >
+              <a href="https://www.google.co.za/maps/dir//Emperors+Palace,+64+Jones+Rd,+O.R.+Tambo,+Kempton+Park,+1620/@-26.1466042,28.2200493,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x1e9514506aaf1531:0xb2a0e221798a4905!2m2!1d28.222238!2d-26.146609!3e0"  target="_blank">
+                <img class="content-image img-fluid d-block mx-auto" alt="" src="../assets/images/map.PNG">
+              </a>
+          </div>
+        </div>
+       <!--   <agm-map [latitude]="lat" [longitude]="lng">
               <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
             </agm-map>
-      </div>
+      </div> -->
       <div class="col-sm-6">
           
           <form [formGroup]="contactUsForm" style="text-align: left;" class="contact_us_padding">

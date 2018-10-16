@@ -50,6 +50,20 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
+img {
+
+}
+.imgA1 {
+  z-index: 1;
+}
+.imgB1 {
+  z-index: 3;
+}
+
+.sub_header{
+  font-size: medium;
+}
+
 .nav-item{
   font-size: 13px;
 }
@@ -87,18 +101,8 @@ a:hover, a:focus {
 }
 
 .home_background{
-  text-align: center;
-  padding-top: 15%;
-  background-color: #4867c0 !important;
-  background-image: linear-gradient(to right, #151e39, #4867c0) !important;
-  background: #151e39 !important;
-  background: linear-gradient(to right, #151e39, #4867c0) !important;
-  color: #FFF;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 2px;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
+  margin-top: 5%;
+  margin-left: 25%;
 }
 
 ul, ol {
@@ -379,7 +383,6 @@ textarea.input {
   }
   .isMobile{
     display: block !important;
-    margin-top: 25% !important;
   }
   #home .home-wrapper{
     top: 85% !important;
@@ -413,7 +416,8 @@ textarea.input {
   }
 
   .home_background {
-
+    margin-top: 70% !important;
+    margin-left: 0% !important;
   }
 
   .img_height_m{

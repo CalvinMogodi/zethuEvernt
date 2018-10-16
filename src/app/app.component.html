@@ -37,9 +37,9 @@
       <li class="nav-item">
         <a href="#package" class="white" style="text-decoration: underline;">Event Packages</a>
       </li>
-      <li class="nav-item">
+     <!-- <li class="nav-item">
         <a href="#eventmap" class="white" style="text-decoration: underline;">Event Map</a>
-      </li>
+      </li> -->
       <li class="nav-item">
         <a href="#contact" class="white" style="text-decoration: underline;">Contact Us</a>
       </li>
@@ -55,7 +55,7 @@
       <!-- /navbar header -->
 
       <!-- Navigation -->
-      <ul class="nav main-nav navbar-right" id="nav" style="float: right!important;  margin-right: -200px; margin-top: -68px;
+      <ul class="nav main-nav navbar-right" id="nav" style="float: right!important;  margin-right: -170px; margin-top: -68px;
     padding: 15px;">
         <li class="nav-item menuitemhome" id="menuitemhome">
           <a href="#home">Home</a>
@@ -72,9 +72,9 @@
         <li class="nav-item">
           <a href="#package">Event Packages</a>
         </li>
-        <li class="nav-item">
+       <!--  <li class="nav-item">
           <a href="#eventmap">Event Map</a>
-        </li>
+        </li>-->
         <li class="nav-item">
           <a href="#contact">Contact Us</a>
         </li>
@@ -90,12 +90,12 @@
 <!-- /Header -->
 
 <!-- Home -->
-<div id="home" class="home_background">
-  <!-- background image -->
-  <img class="isNotMobile" height="70%" width="50%" src="../assets/images/background_new.png" />
-  <!--<div class="section-bg" height="30px" width="100%" style="background-image:url(../assets/images/background.PNG)" data-stellar-background-ratio="0.5"></div>
-  /background image -->
-  <img class="isMobile" height="50%" width="100%" src="../assets/images/background_new.png" />
+<div id="home">
+  <!-- background image 
+  <img class="isNotMobile imgB1 home_background" height="80%" width="50%" src="../assets/images/background_new.png" />-->
+  <img class="isNotMobile" height="100%" width="100%" src="../assets/images/home_background.PNG" />
+
+  <img class="isMobile" height="100%" width="100%" src="../assets/images/home_background_mobile.PNG" />
   <!-- home wrapper -->
   <div class="home-wrapper">
     <app-home></app-home>
@@ -137,12 +137,12 @@
 <!-- /Package -->
 
 <!-- Event Map -->
-<div id="eventmap" class="section" style="padding: 0px !important; background-color: ghostwhite">
-  <!-- container -->
-  <app-eventmap></app-eventmap>
-  <!-- /container -->
+<div id="package" id="eventmap" style="background-color: ghostwhite">
+ <!--  container -->
+ <app-eventmap></app-eventmap>
+  <!--  /container -->
 </div>
-<!-- /Event Map -->
+ <!--/Event Map -->
 
 <!-- Contact Us -->
 <div id="contact" class="section">
@@ -258,12 +258,37 @@
               field above is required.</small>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Contact Number</label>
+            <label for="exampleInputEmail1">Cell Number</label>
             <input [(ngModel)]="guest.contactNumber" [value]="guest.contactNumber" formControlName="contactNumber" (input)="guest.contactNumber = $event.target.value"
               type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
             <small *ngIf="!userForm.controls.contactNumber.valid && (userForm.controls.contactNumber.dirty || submitAttempt)" class="red">The
               field above is required.</small>
           </div>
+          <div class="form-group">
+              <label for="exampleInputEmail1">Office Number</label>
+              <input [(ngModel)]="guest.officeNumber" [value]="guest.officeNumber" formControlName="officeNumber" (input)="guest.officeNumber = $event.target.value"
+                type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+              <small *ngIf="!userForm.controls.officeNumber.valid && (userForm.controls.officeNumber.dirty || submitAttempt)" class="red">The
+                field above is required.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail4">Partnership Package</label>
+                <div class="dropdown show" >
+                    <a class="btn btn-secondary dropdown-toggle" style="background-color: transparent;
+                    color: #4e555b;
+                    border-color: #ced4da; width: 100%; text-align: left;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      {{packageText}}
+                    </a>          
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="#" (click)="setPackage('Bronze Partnership @ R10 000.00')">Bronze Partnership @ R10 000.00</a>
+                      <a class="dropdown-item" href="#" (click)="setPackage('Silver Partnership @ R25 000.00')">Silver Partnership @ R25 000.00</a>
+                      <a class="dropdown-item" href="#" (click)="setPackage('Gold Partnership @ R50 000.00')">Gold Partnership @ R50 000.00</a>
+                      <a class="dropdown-item" href="#" (click)="setPackage('Platinum Partnership @ R100 000.00')">Platinum Partnership @ R100 000.00</a>
+                    </div>
+                  </div>
+              </div>
         </form>
         <form *ngIf="showSuc">
           <div class="form-group">

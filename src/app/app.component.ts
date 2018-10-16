@@ -17,14 +17,18 @@ export class AppComponent {
   public codeError = false;
   public showSuc = false;
   public titleText = 'Title';
+  public packageText = 'Please Select Partnership Package';
   public guest = {
     key: '',
+    titleText: '',
     name: '',
     surname: '',
     contactNumber: '',
     email: '',
     role: '',
     organization: '',
+    officeNumber: '',
+    packageText: '',
   };
   public submitAttempt = false;
   userForm: FormGroup;
@@ -38,7 +42,8 @@ export class AppComponent {
     this.userForm = formBuilder.group({
       name: ['', Validators.compose([Validators.required])],
       surname: ['', Validators.compose([Validators.required])],
-      contactNumber: ['', Validators.compose([Validators.required])],
+      contactNumber: [''],
+      officeNumber: [''],      
       email: ['', Validators.compose([Validators.required])],
       role: ['', Validators.compose([Validators.required])],
       organization: ['', Validators.compose([Validators.required])],
@@ -49,6 +54,12 @@ export class AppComponent {
 
   setTitle(text){
     this.titleText = text;
+    this.guest.titleText = text; 
+  }
+
+  setPackage(text){
+    this.packageText = text;
+    this.guest.packageText = text; 
   }
 
   procced() {
@@ -64,6 +75,13 @@ export class AppComponent {
             this.guest.surname = dbGuest.surname;
             this.guest.contactNumber = dbGuest.contactNumber;        
             this.guest.email = dbGuest.email;
+            this.guest.officeNumber = dbGuest.officeNumber;
+            this.guest.organization = dbGuest.organization;
+            this.guest.role = dbGuest.role;    
+            this.titleText = dbGuest.titleText;      
+            this.guest.titleText = dbGuest.titleText;    
+            this.packageText = dbGuest.packageText;      
+            this.guest.packageText = dbGuest.packageText;    
             this.isOpen = true;
           }else{
             this.isOpen = false;
@@ -83,7 +101,12 @@ export class AppComponent {
       updates['guests/'+this.guest.key+'/name/'] = this.guest.name; 
       updates['guests/'+this.guest.key+'/surname/'] = this.guest.surname; 
       updates['guests/'+this.guest.key+'/contactNumber/'] = this.guest.contactNumber; 
-      updates['guests/'+this.guest.key+'/email/'] = this.guest.email;     
+      updates['guests/'+this.guest.key+'/email/'] = this.guest.email;  
+      updates['guests/'+this.guest.key+'/organization/'] = this.guest.organization; 
+      updates['guests/'+this.guest.key+'/officeNumber/'] = this.guest.officeNumber; 
+      updates['guests/'+this.guest.key+'/role/'] = this.guest.role;  
+      updates['guests/'+this.guest.key+'/titleText/'] = this.guest.titleText;  
+      updates['guests/'+this.guest.key+'/packageText/'] = this.guest.packageText;        
       this.db.database.ref().update(updates);      
       this.showSuc = true;
       this.showError = false;
