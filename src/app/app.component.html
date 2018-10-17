@@ -271,24 +271,6 @@
               <small *ngIf="!userForm.controls.officeNumber.valid && (userForm.controls.officeNumber.dirty || submitAttempt)" class="red">The
                 field above is required.</small>
             </div>
-
-            <div class="form-group">
-                <label for="inputEmail4">Partnership Package</label>
-                <div class="dropdown show" >
-                    <a class="btn btn-secondary dropdown-toggle" style="background-color: transparent;
-                    color: #4e555b;
-                    border-color: #ced4da; width: 100%; text-align: left;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                      aria-expanded="false">
-                      {{packageText}}
-                    </a>          
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#" (click)="setPackage('Bronze Partnership @ R10 000.00')">Bronze Partnership @ R10 000.00</a>
-                      <a class="dropdown-item" href="#" (click)="setPackage('Silver Partnership @ R25 000.00')">Silver Partnership @ R25 000.00</a>
-                      <a class="dropdown-item" href="#" (click)="setPackage('Gold Partnership @ R50 000.00')">Gold Partnership @ R50 000.00</a>
-                      <a class="dropdown-item" href="#" (click)="setPackage('Platinum Partnership @ R100 000.00')">Platinum Partnership @ R100 000.00</a>
-                    </div>
-                  </div>
-              </div>
         </form>
         <form *ngIf="showSuc">
           <div class="form-group">
@@ -343,6 +325,9 @@
           </div>
         </div>
       </div>
+      <div class="modal-footer">  
+          <button type="button" (click)="apply('bronze')" class="btn btn-primary" data-toggle="modal" data-target="#packageModal">Apply</button>
+      </div>
     </div>
   </div>
 </div>
@@ -384,6 +369,9 @@
           </div>
         </div>
       </div>
+      <div class="modal-footer">  
+          <button type="button" (click)="apply('silver')" class="btn btn-primary" data-toggle="modal" data-target="#packageModal">Apply</button>
+      </div>
     </div>
   </div>
 </div>
@@ -434,60 +422,16 @@
           </div>
         </div>
       </div>
+      <div class="modal-footer">  
+          <button type="button" (click)="apply('gold')" class="btn btn-primary" data-toggle="modal" data-target="#packageModal">Apply</button>
+      </div>
     </div>
   </div>
 </div>
 
 
 <!-- Modal -->
-<div class="modal fade" id="package3Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Gold Partnership @ R50 000.00</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <label>Gold Partnership Package will include one of the followings:</label>
-        <div class="row">
-          <div class="col-lg-6">
-            <p style="font-size: 12px;">
-              <b>Conference Tote Bag </b><br> • Distributed to all attendees and exhibitors upon arrival at the conference
-              with your marketing and promotional material <br><br>
-              <b>Conference Workbook </b><br> • The cover of the workbook (in colour) features artwork and/or logo as determined
-              by your company and is distributed to all attendees and exhibitors upon arrival at the conference. <br><br>
-              <b>Your Company banner </b><br> • Includes 3 pull-up banners to be placed at the entrance of the conference
-              venue. They will be strategically placed on the way to the exhibit hall or in the registration area. Art work
-              is submitted by client <br><br>
-              <b>Luncheon Reception </b><br> • Signs at the luncheon reception promote your company as the partner. <br>              •
-              A reserved table will be set up for company and guests. <br><br>
-              <b>Portfolio Jackets </b><br> • The cover of the Portfolio Jackets, with writing pad, will feature artwork
-              and/or logo as determined by your company and are placed at each setting during the sessions <br><br>
-              <b>Gala Dinner </b><br> • Reserved table for up to 5 people at VIP section
 
-            </p>
-          </div>
-          <div class="col-lg-6">
-            <p style="font-size: 12px;">
-              • Full page and colour advertisement in the Public Private Partnership Conference Workbook and Website. The workbook will
-              be distributed to all conference attendees and exhibitors.<br> • Up to five (5) representatives
-              from the partnering organisation to attend the entire conference and Gala Dinner with the freedom to purchase
-              extra tickets for a table that can be branded.<br> • Your company’s corporate logo displayed in ads and materials
-              promoting the conference as well as on signage at the conference that recognises your company as a partner.<br>              •
-              Description of your company’s products and services with your corporate logo displayed in the National Coast
-              Public Private Partnership Conference workbook, distributed to all attendees and exhibitors.<br> • Exhibit
-              space at the conference to show case products and services.<br> • Conference attendee list with names, addresses
-              and phone numbers (available week of conference).<br> • Company logo to appear on all marketing platforms (social
-              and printed media) <br>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <!-- Modal -->
 <div class="modal fade" id="package4Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -533,6 +477,9 @@
             </p>
           </div>
         </div>
+      </div>
+      <div class="modal-footer">  
+          <button type="button" (click)="apply('platinum')" class="btn btn-primary" data-toggle="modal" data-target="#packageModal">Apply</button>
       </div>
     </div>
   </div>
@@ -588,3 +535,102 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="packageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+          <button type="button" class="close" data-dismiss="modal" id="closeModel" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form *ngIf="!applyIsComplete" [formGroup]="partnerForm">
+            
+            <div  class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="inputEmail4">Title</label>
+                    <div class="dropdown show" >
+                        <a class="btn btn-secondary dropdown-toggle" style="background-color: transparent;
+                        color: #4e555b;
+                        border-color: #ced4da;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false">
+                          {{packageText}}
+                        </a>          
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <a class="dropdown-item" href="#" (click)="setPartnerTitle('Mr')">Mr</a>
+                          <a class="dropdown-item" href="#" (click)="setPartnerTitle('Mrs')">Mrs</a>
+                          <a class="dropdown-item" href="#" (click)="setPartnerTitle('Miss')">Miss</a>
+                          <a class="dropdown-item" href="#" (click)="setPartnerTitle('Ms')">Ms</a>
+                          <a class="dropdown-item" href="#" (click)="setPartnerTitle('Mx')">Prof</a>
+                          <a class="dropdown-item" href="#" (click)="setPartnerTitle('Dr')">Dr</a>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="form-group col-md-10">
+              <label for="exampleInputEmail1">Name</label>
+              <input [(ngModel)]="partner.name" [value]="partner.name" formControlName="name" (input)="partner.name = $event.target.value" type="text"
+                class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+              <small *ngIf="!partnerForm.controls.name.valid && (partnerForm.controls.name.dirty || partnerSubmitAttempt)" class="red">The
+                field above is required.</small>
+            </div>
+          </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Surname</label>
+              <input [(ngModel)]="partner.surname" [value]="partner.surname" formControlName="surname" (input)="partner.surname = $event.target.value"
+                type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter surname">
+              <small *ngIf="!partnerForm.controls.surname.valid && (partnerForm.controls.surname.dirty || partnerSubmitAttempt)" class="red">The
+                field above is required.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Organization</label>
+              <input [(ngModel)]="partner.organization" [value]="partner.organization" formControlName="organization" (input)="partner.organization = $event.target.value"
+                type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Organization">
+              <small *ngIf="!partnerForm.controls.organization.valid && (partnerForm.controls.organization.dirty || partnerSubmitAttempt)" class="red">The
+                field above is required.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Role/ Title</label>
+              <input [(ngModel)]="partner.role" [value]="partner.role" formControlName="role" (input)="partner.role = $event.target.value" type="text"
+                class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Role/ Title">
+              <small *ngIf="!partnerForm.controls.role.valid && (partnerForm.controls.role.dirty || partnerSubmitAttempt)" class="red">The
+                field above is required.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email Address</label>
+              <input [(ngModel)]="partner.email" [value]="partner.email" formControlName="email" (input)="partner.email = $event.target.value"
+                type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small *ngIf="!partnerForm.controls.email.valid && (partnerForm.controls.email.dirty || partnerSubmitAttempt)" class="red">The
+                field above is required.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Cell Number</label>
+              <input [(ngModel)]="partner.contactNumber" [value]="partner.contactNumber" formControlName="contactNumber" (input)="partner.contactNumber = $event.target.value"
+                type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+              <small *ngIf="!partnerForm.controls.contactNumber.valid && (partnerForm.controls.contactNumber.dirty || partnerSubmitAttempt)" class="red">The
+                field above is required.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Office Number</label>
+                <input [(ngModel)]="partner.officeNumber" [value]="partner.officeNumber" formControlName="officeNumber" (input)="partner.officeNumber = $event.target.value"
+                  type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+                <small *ngIf="!partnerForm.controls.officeNumber.valid && (partnerForm.controls.officeNumber.dirty || partnerSubmitAttempt)" class="red">The
+                  field above is required.</small>
+              </div>
+          </form>
+          <form *ngIf="applyIsComplete">
+            <div class="form-group">
+              <label style="color: green;">Congratulations! You are now a partner.</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <small *ngIf="showPackageError" style="color: red;font-size:small;text-align:center"> We are unable to process your request please try again later.</small>  
+          <button type="button" (click)="submitPackage()" class="btn btn-primary" *ngIf="!applyIsComplete">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

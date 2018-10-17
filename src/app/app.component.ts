@@ -8,6 +8,9 @@ import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/fo
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  public applyIsComplete = false;
+  public showPackageError = false;
+  public partnerSubmitAttempt = false;
   title = 'zethuevernt';
   description = 'Angular-Firebase Demo';
   public verificationCode = undefined;
@@ -17,7 +20,7 @@ export class AppComponent {
   public codeError = false;
   public showSuc = false;
   public titleText = 'Title';
-  public packageText = 'Please Select Partnership Package';
+  public packageText = 'Title';
   public guest = {
     key: '',
     titleText: '',
@@ -28,10 +31,22 @@ export class AppComponent {
     role: '',
     organization: '',
     officeNumber: '',
-    packageText: '',
   };
+
+  public partner = {
+    titleText: '',
+    name: '',
+    surname: '',
+    contactNumber: '',
+    email: '',
+    role: '',
+    organization: '',
+    officeNumber: '',
+  };
+
   public submitAttempt = false;
   userForm: FormGroup;
+  partnerForm: FormGroup;  
   public timer = 0;
   public days = 0;
   public hours = 0;
@@ -40,6 +55,16 @@ export class AppComponent {
   constructor(public formBuilder: FormBuilder, public db: AngularFireDatabase) {
     this.verificationCode = undefined;
     this.userForm = formBuilder.group({
+      name: ['', Validators.compose([Validators.required])],
+      surname: ['', Validators.compose([Validators.required])],
+      contactNumber: [''],
+      officeNumber: [''],      
+      email: ['', Validators.compose([Validators.required])],
+      role: ['', Validators.compose([Validators.required])],
+      organization: ['', Validators.compose([Validators.required])],
+    });
+
+    this.partnerForm = formBuilder.group({
       name: ['', Validators.compose([Validators.required])],
       surname: ['', Validators.compose([Validators.required])],
       contactNumber: [''],
@@ -57,9 +82,8 @@ export class AppComponent {
     this.guest.titleText = text; 
   }
 
-  setPackage(text){
+  setPartnerTitle(text){
     this.packageText = text;
-    this.guest.packageText = text; 
   }
 
   procced() {
@@ -79,9 +103,7 @@ export class AppComponent {
             this.guest.organization = dbGuest.organization;
             this.guest.role = dbGuest.role;    
             this.titleText = dbGuest.titleText;      
-            this.guest.titleText = dbGuest.titleText;    
-            this.packageText = dbGuest.packageText;      
-            this.guest.packageText = dbGuest.packageText;    
+            this.guest.titleText = dbGuest.titleText;     
             this.isOpen = true;
           }else{
             this.isOpen = false;
@@ -105,11 +127,19 @@ export class AppComponent {
       updates['guests/'+this.guest.key+'/organization/'] = this.guest.organization; 
       updates['guests/'+this.guest.key+'/officeNumber/'] = this.guest.officeNumber; 
       updates['guests/'+this.guest.key+'/role/'] = this.guest.role;  
-      updates['guests/'+this.guest.key+'/titleText/'] = this.guest.titleText;  
-      updates['guests/'+this.guest.key+'/packageText/'] = this.guest.packageText;        
+      updates['guests/'+this.guest.key+'/titleText/'] = this.guest.titleText;        
       this.db.database.ref().update(updates);      
       this.showSuc = true;
       this.showError = false;
+    }    
+  }
+
+  submitPackage() {
+    this.partnerSubmitAttempt = true;
+    if(this.partnerForm.valid){
+      this.db.database.ref().push(this.partner);      
+      this.applyIsComplete = true;
+      this.showPackageError = false;
     }    
   }
 
