@@ -42,6 +42,7 @@ export class AppComponent {
     role: '',
     organization: '',
     officeNumber: '',
+    package: ''
   };
 
   public submitAttempt = false;
@@ -84,6 +85,10 @@ export class AppComponent {
 
   setPartnerTitle(text){
     this.packageText = text;
+  }
+
+  apply(packageStr){
+    this.partner.package = packageStr;
   }
 
   procced() {
