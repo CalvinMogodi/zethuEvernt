@@ -17,6 +17,8 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EventmapComponent } from './eventmap/eventmap.component';
 import { AgmCoreModule } from '@agm/core';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { AgmCoreModule } from '@agm/core';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, // for database
     FormsModule,
+    HttpModule,
+    HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     AgmCoreModule.forRoot({

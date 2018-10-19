@@ -81,8 +81,8 @@
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputPassword4">Email Address</label>
-                      <input [(ngModel)]="message.email" [value]="message.email" formControlName="email" (input)="message.email = $event.target.value" type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                      <small *ngIf="!contactUsForm.controls.email.valid && (contactUsForm.controls.email.dirty || submitAttempt)" class="red">The field above is required.</small>
+                      <input [(ngModel)]="message.emailaddress" [value]="message.emailaddress" formControlName="emailaddress" (input)="message.emailaddress = $event.target.value" type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                      <small *ngIf="!contactUsForm.controls.emailaddress.valid && (contactUsForm.controls.emailaddress.dirty || submitAttempt)" class="red">The field above is required.</small>
                     </div>
                   </div>
               <div class="form-group">

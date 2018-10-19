@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ export class AppComponent {
   public applyIsComplete = false;
   public showPackageError = false;
   public partnerSubmitAttempt = false;
+  public url: string = "http://laravel.site:7000/api";
   title = 'zethuevernt';
   description = 'Angular-Firebase Demo';
   public verificationCode = undefined;
@@ -53,7 +55,7 @@ export class AppComponent {
   public hours = 0;
   public minutes = 0;
   public seconds = 0;
-  constructor(public formBuilder: FormBuilder, public db: AngularFireDatabase) {
+  constructor(public formBuilder: FormBuilder, public db: AngularFireDatabase, public http: HttpClient) {
     this.verificationCode = undefined;
     this.userForm = formBuilder.group({
       name: ['', Validators.compose([Validators.required])],
@@ -94,7 +96,7 @@ export class AppComponent {
   procced() {
     this.codeError = false;
     if (this.verificationCode != undefined) {
-      let code = this.verificationCode.toLowerCase().trim();
+      let code = this.verificationCode.trim();
       this.db.database.ref('guests').orderByChild("code").equalTo(code).once("value", snapshot => {  
         snapshot.forEach(item => {
           let dbGuest = item.val();
@@ -142,7 +144,9 @@ export class AppComponent {
   submitPackage() {
     this.partnerSubmitAttempt = true;
     if(this.partnerForm.valid){
-      this.db.database.ref().push(this.partner);      
+      this.db.database.ref().push(this.partner);   
+      this.http.post(this.url + "/zethurpartnerconfirmation", this.partner);   
+      this.http.post(this.url + "/zethurpartner", this.partner); 
       this.applyIsComplete = true;
       this.showPackageError = false;
     }    
