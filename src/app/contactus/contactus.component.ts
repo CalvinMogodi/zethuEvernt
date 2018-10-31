@@ -10,7 +10,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactusComponent implements OnInit {
   contactUsForm: FormGroup;
-  public url: string = "http://laravel.site:7000/api";
+  //public url: string = "http://laravel.site:7000/api";
+  public url: string = "http://auditionsalertsa.dedicated.co.za/api";
   public str = false;
   public showError = false;
   public submitAttempt = false;
@@ -41,14 +42,17 @@ export class ContactusComponent implements OnInit {
     this.showError = false;
     if (this.contactUsForm.valid) {
       this.db.list('/messages').push(this.message);  
-      let three = {
+      let emailTosent = {
         name: this.message.name,
         surname: this.message.surname,
-        contactNumber: "0" + this.message.contactNumber,
+        contactnumber: "0" + this.message.contactNumber,
         emailaddress: this.message.emailaddress,
         message: this.message.message,
       };
-      this.http.post(this.url + "/zethurcontactus", three);
+      let emailTosentJson = JSON.stringify(emailTosent);
+      this.http.post(this.url + "/zethurcontactus", emailTosentJson).subscribe(data => {
+        let Working = "";
+            });
       this.showError = true;
       this.message = {
         name: '',

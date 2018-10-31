@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 
 @Component({
   selector: 'app-root',
@@ -12,31 +13,34 @@ export class AppComponent {
   public applyIsComplete = false;
   public showPackageError = false;
   public partnerSubmitAttempt = false;
-  public url: string = "http://laravel.site:7000/api";
+  //public url: string = "http://laravel.site:7000/api";
+  public url: string = "http://auditionsalertsa.dedicated.co.za/api";
   title = 'zethuevernt';
   description = 'Angular-Firebase Demo';
   public verificationCode = undefined;
   itemValue = 'worrking';
   public showError = false;
   public isOpen = false;
+  public alreadyconfirmed = false;
   public codeError = false;
   public showSuc = false;
   public titleText = 'Title';
   public packageText = 'Title';
   public guest = {
     key: '',
-    titleText: '',
+    titleText: '',   
     name: '',
     surname: '',
     contactNumber: '',
     email: '',
     role: '',
     organization: '',
-    officeNumber: '',
+    officeNumber: ''
   };
 
   public partner = {
     titleText: '',
+    title: '',
     name: '',
     surname: '',
     contactNumber: '',
@@ -44,7 +48,8 @@ export class AppComponent {
     role: '',
     organization: '',
     officeNumber: '',
-    package: ''
+    package: '',
+    toemail: ''
   };
 
   public submitAttempt = false;
@@ -94,6 +99,7 @@ export class AppComponent {
   }
 
   procced() {
+    this.alreadyconfirmed = false;
     this.codeError = false;
     if (this.verificationCode != undefined) {
       let code = this.verificationCode.trim();
@@ -101,7 +107,13 @@ export class AppComponent {
         snapshot.forEach(item => {
           let dbGuest = item.val();
           if(this.guest != null){
-            this.guest.key = item.key;
+            if(dbGuest.confirmed){
+              this.showSuc = true;
+              this.showError = false;
+              this.codeError = false;
+              this.alreadyconfirmed = true;
+            }else {
+              this.guest.key = item.key;
             this.guest.name = dbGuest.name;
             this.guest.surname = dbGuest.surname;
             this.guest.contactNumber = dbGuest.contactNumber;        
@@ -112,13 +124,18 @@ export class AppComponent {
             this.titleText = dbGuest.titleText;      
             this.guest.titleText = dbGuest.titleText;     
             this.isOpen = true;
+            this.showSuc = false;
+            this.showError = false;
+            this.codeError = false;
+            this.alreadyconfirmed = false;
+            }            
           }else{
             this.isOpen = false;
             this.codeError = true;
           }
           return true;
         })
-        this.codeError = true;
+        //this.codeError = true;
       });      
     }
   }
@@ -129,24 +146,47 @@ export class AppComponent {
       updates['guests/'+this.guest.key+'/confirmed/'] = true;    
       updates['guests/'+this.guest.key+'/name/'] = this.guest.name; 
       updates['guests/'+this.guest.key+'/surname/'] = this.guest.surname; 
-      updates['guests/'+this.guest.key+'/contactNumber/'] = this.guest.contactNumber; 
+      updates['guests/'+this.guest.key+'/contactNumber/'] = "0" + this.guest.contactNumber; 
       updates['guests/'+this.guest.key+'/email/'] = this.guest.email;  
       updates['guests/'+this.guest.key+'/organization/'] = this.guest.organization; 
-      updates['guests/'+this.guest.key+'/officeNumber/'] = this.guest.officeNumber; 
+      updates['guests/'+this.guest.key+'/officeNumber/'] = "0" + this.guest.officeNumber; 
       updates['guests/'+this.guest.key+'/role/'] = this.guest.role;  
       updates['guests/'+this.guest.key+'/titleText/'] = this.guest.titleText;        
-      this.db.database.ref().update(updates);      
+      this.db.database.ref().update(updates);  
+      let email = {
+        displayname: this.guest.name + ' ' + this.guest.surname,
+        toemail: this.guest.email
+      }  
+      let emailJson = JSON.stringify(email);
+      this.http.post(this.url + "/zethuregistrationconfirmation", emailJson).subscribe(data => {
+        let Working = "";
+            });  
       this.showSuc = true;
       this.showError = false;
     }    
   }
+  download(){
+    window.location.href='../assets/doc/PPP Invest Partnership Proposal.PDF';
+  } 
 
   submitPackage() {
     this.partnerSubmitAttempt = true;
     if(this.partnerForm.valid){
-      this.db.database.ref().push(this.partner);   
-      this.http.post(this.url + "/zethurpartnerconfirmation", this.partner);   
-      this.http.post(this.url + "/zethurpartner", this.partner); 
+      this.partner.titleText = this.packageText;
+      this.partner.title = this.packageText;
+      this.db.database.ref().child("partner").push(this.partner);   
+      var headers = new Headers();
+      headers.append("Accept", 'application/json');
+      headers.append('Content-Type', 'application/x-www-form-urlencoded');
+      this.partner.toemail = this.partner.email;
+      let partner = JSON.stringify(this.partner);
+      let optionss = new RequestOptions({ headers: headers });
+      this.http.post(this.url + "/zethurpartnerconfirmation", partner).subscribe(data => {
+                        let Working = "";
+                            });
+      this.http.post(this.url + "/zethurpartner", partner).subscribe(data => {
+                              let Working = "";
+                                  });
       this.applyIsComplete = true;
       this.showPackageError = false;
     }    
@@ -154,7 +194,7 @@ export class AppComponent {
 
   timerTick() {
     setTimeout(() => {
-      let toDate = new Date("2018/11/20 8:00 AM");
+      let toDate = new Date("2018/12/5 8:00 AM");
       //let toDate = new Date("2018/10/0 15:4 PM");
       var now = new Date();
       var difference = toDate.getTime() - now.getTime();

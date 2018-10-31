@@ -21,27 +21,27 @@
   </button>
   <!-- /Mobile toggle -->
   <div id="mobileMenu" class="collapse menu-backgroud">
-    <ul style="text-align: center">
+    <ul>
       <li class="nav-item">
-        <a href="#home" class="white" style="text-decoration: underline;">Home</a>
+        <a href="#home" class="white">Home</a>
       </li>
       <li class="nav-item">
-        <a href="#about" class="white" style="text-decoration: underline;">About</a>
+        <a href="#about" class="white">About</a>
       </li>
       <li class="nav-item">
-        <a href="#schedule" class="white" style="text-decoration: underline;">Schedule</a>
-      </li>
-      <li class="nav-item">
-        <a href="#speakers" class="white" style="text-decoration: underline;">Speakers</a>
-      </li>
-      <li class="nav-item">
-        <a href="#package" class="white" style="text-decoration: underline;">Event Packages</a>
+        <a href="#schedule" class="white">Schedule</a>
       </li>
      <!-- <li class="nav-item">
-        <a href="#eventmap" class="white" style="text-decoration: underline;">Event Map</a>
+        <a href="#speakers" class="white">Speakers</a>
       </li> -->
       <li class="nav-item">
-        <a href="#contact" class="white" style="text-decoration: underline;">Contact Us</a>
+        <a href="#package" class="white">Event Packages</a>
+      </li>
+     <!-- <li class="nav-item">
+        <a href="#eventmap" class="white">Event Map</a>
+      </li> -->
+      <li class="nav-item">
+        <a href="#contact" class="white">Contact Us</a>
       </li>
       <li class="nav-item" style="padding: 5px;">
         <a href="#" style="display: initial !important;" class="main-btn btn_padding" data-toggle="modal" data-target="#exampleModal">Register</a>
@@ -66,9 +66,9 @@
         <li class="nav-item">
           <a href="#schedule">Schedule</a>
         </li>
-        <li class="nav-item">
+        <!--<li class="nav-item">
           <a href="#speakers">Speakers</a>
-        </li>
+        </li>-->
         <li class="nav-item">
           <a href="#package">Event Packages</a>
         </li>
@@ -93,9 +93,10 @@
 <div id="home">
   <!-- background image 
   <img class="isNotMobile imgB1 home_background" height="80%" width="50%" src="../assets/images/background_new.png" />-->
-  <img class="isNotMobile" height="100%" width="100%" src="../assets/images/home_background.PNG" />
+  <img class="isNotMobile home_background" height="100%" width="100%" src="../assets/images/background image.png" />
+    
 
-  <img class="isMobile" height="100%" width="100%" src="../assets/images/home_background_mobile.PNG" />
+  <img class="isMobile" height="90%" width="100%" src="../assets/images/background_image_mobile.png" />
   <!-- home wrapper -->
   <div class="home-wrapper">
     <app-home></app-home>
@@ -121,11 +122,9 @@
 <!-- /Event Schedule -->
 
 <!-- Speakers -->
-<div id="speakers" class="section">
-  <!-- container -->
+<!--<div id="speakers" class="section">
   <app-speakers></app-speakers>
-  <!-- /container -->
-</div>
+</div> -->
 <!-- /Speakers -->
 
 <!-- Package -->
@@ -159,14 +158,14 @@
     <!-- row -->
     <div class="row">
       <!-- copyright -->
-      <div class="col-md-6 col-md-pull-6" style="text-align: right;">
-        <small> &copy; 2018 - ZCS Asset Management</small>
+      <div class="col-md-6 col-md-pull-6">
+        <small> &copy; 2018 - Zethu Consulting Services</small>
       </div>
       <!-- /copyright -->
-      <div class="col-md-6 col-md-pull-6" style="margin-top: -12px;text-align: right;">
-        <a href="https://twitter.com" target="_blank"><i style="font-size: large;color: blue;padding-right: 5px;" class="fa fa-twitter"></i></a>
-        <a href="https://www.linkedin.com" target="_blank"><i style="font-size: large;color: blue;padding-right: 5px;"  class="fa fa-linkedin"></i></a>
-        <a href="https://www.facebook.com" target="_blank"><i style="font-size: large;color: blue;padding-right: 5px;"  class="fa fa-facebook"></i></a>
+      <div class="col-md-6 col-md-pull-6 phone_footer_20" style="margin-top: -10px;text-align: right;">
+        <a href="https://twitter.com" style="padding-right: 5px;" target="_blank"><img src="../assets/images/twitter.png" /></a>
+        <a href="https://www.linkedin.com" style="padding-right: 5px;" target="_blank"><img src="../assets/images/linkedin.png" /></a>
+        <a href="https://www.facebook.com" style="padding-right: 5px;" target="_blank">  <img src="../assets/images/facebook.png" /></a>
       </div>
     </div>
     <!-- /row -->
@@ -257,7 +256,7 @@
             <label for="exampleInputEmail1">Cell Number</label>
             <input [(ngModel)]="guest.contactNumber" [value]="guest.contactNumber" formControlName="contactNumber" (input)="guest.contactNumber = $event.target.value"
               type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
-            <small *ngIf="!userForm.controls.contactNumber.valid && (userForm.controls.contactNumber.dirty || submitAttempt)" class="red">The
+            <small *ngIf="!userForm.controls.contactNumber.valid && (userForm.controls.contactNumber.dirty || submitAttempt && !alreadyconfirmed)" class="red">The
               field above is required.</small>
           </div>
           <div class="form-group">
@@ -268,11 +267,18 @@
                 field above is required.</small>
             </div>
         </form>
-        <form *ngIf="showSuc">
+        <form *ngIf="showSuc && !alreadyconfirmed">
           <div class="form-group">
             <label style="color: green;">Congratulations! You are now successfully registered.</label>
           </div>
         </form>
+        <form *ngIf="alreadyconfirmed">
+            <div class="form-group">
+              <label style="color: green;">You are already registered.</label>
+            </div>
+          </form>
+
+        
       </div>
       <div class="modal-footer">
         <small *ngIf="showError" style="color: red;font-size:small;text-align:center"> We are unable to confirm your code
@@ -317,8 +323,8 @@
             </div>
           </div>
       </div>
-      <div class="modal-footer">  
-          <button type="button" (click)="apply('bronze')" class="btn btn-primary" data-toggle="modal" data-target="#packageModal">Apply</button>
+      <div class="modal-footer">            
+          <button type="button" (click)="apply('Bronze Partnership @ R10 000.00')" class="btn btn-primary" data-toggle="modal" data-target="#packageModal">Apply</button>
       </div>
     </div>
   </div>
@@ -351,7 +357,7 @@ tickets for a table that can be branded.
         </div>
       </div>
       <div class="modal-footer">  
-          <button type="button" (click)="apply('silver')" class="btn btn-primary" data-toggle="modal" data-target="#packageModal">Apply</button>
+          <button type="button" (click)="apply('Silver Partnership @ R25 000.00')" class="btn btn-primary" data-toggle="modal" data-target="#packageModal">Apply</button>
       </div>
     </div>
   </div>
@@ -387,7 +393,7 @@ tickets for a table that can be branded.
         </div>
       </div>
       <div class="modal-footer">  
-          <button type="button" (click)="apply('gold')" class="btn btn-primary" data-toggle="modal" data-target="#packageModal">Apply</button>
+          <button type="button" (click)="apply('Gold Partnership @ R50 000.00')" class="btn btn-primary" data-toggle="modal" data-target="#packageModal">Apply</button>
       </div>
     </div>
   </div>
@@ -438,7 +444,7 @@ tickets for a table that can be branded.
         </div>
       </div>
       <div class="modal-footer">  
-          <button type="button" (click)="apply('platinum')" class="btn btn-primary" data-toggle="modal" data-target="#packageModal">Apply</button>
+          <button type="button" (click)="apply('Platinum Partnership @ R100 000.00')" class="btn btn-primary" data-toggle="modal" data-target="#packageModal">Apply</button>
       </div>
     </div>
   </div>
