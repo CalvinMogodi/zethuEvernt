@@ -103,16 +103,30 @@ ul, ol {
 .main-btn {
   display: inline-block;
   padding: 14px 50px;
-  background-color: #4867c0 !important;
-  background-image: linear-gradient(to right, #4867c0, #329fec) !important;
-  background: #4867c0 !important;
-  background: linear-gradient(to right, #4867c0, #329fec) !important;
+  background: linear-gradient(to right, gray, silver) !important;
   color: #FFF;
   text-transform: uppercase;
   border: none;
   border-radius: 2px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
+}
+
+.homefooter{
+  position: fixed;
+  padding-left: 55px;
+  bottom: 0;
+  width: -webkit-fill-available;
+  margin-right: 200px;
+  margin-left: -200px;
+}
+
+.left{
+  left: 0;
+}
+
+.right{
+  right: 0;
 }
 
 .main-btn:hover, .main-btn:focus {
@@ -266,10 +280,7 @@ textarea.input {
   left: 0;
   right: 0;
   top: 0;
-  background-color: #4867c0 !important;
-    background-image: linear-gradient(to right, #4867c0, #329fec) !important;
-    background: #4867c0 !important;
-    background: linear-gradient(to right, #4867c0, #329fec) !important;
+  background: linear-gradient(to right, gray, silver) !important;
   -webkit-box-shadow: 0px 0px 3px #0003;
   box-shadow: 0px 0px 3px #0003;
   border-bottom: none;
@@ -361,13 +372,13 @@ textarea.input {
 @media (min-width: 767px) and (orientation : landscape) {
 
   .mobile_home {
-    background-size: contain !important;
+    background-size: cover !important;
     background-repeat: no-repeat !important;
-    background-image: url(../images/background.png) !important;
+    background-image: url(../images/background_n.png) !important;
 }
 
   #home .home-wrapper{
-    top: 90% !important;
+    top: 99% !important;
   }
 }
 
@@ -498,10 +509,7 @@ textarea.input {
     margin-left: 0% !important;
   }
   .menu-backgroud{
-    background-color: #4867c0 !important;
-    background-image: linear-gradient(to right, #4867c0, #329fec) !important;
-    background: #4867c0 !important;
-    background: linear-gradient(to right, #4867c0, #329fec) !important;
+     background: linear-gradient(to right, gray, silver) !important;
     -webkit-box-shadow: 0px 0px 3px #0003;
     box-shadow: 0px 0px 3px #0003;
     border-bottom: none;
@@ -898,10 +906,7 @@ textarea.input {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background-color: #4867c0 !important;
-  background-image: linear-gradient(to right, #4867c0, #329fec) !important;
-  background: #4867c0 !important;
-  background: linear-gradient(to right, #4867c0, #329fec) !important;
+  background: linear-gradient(to right, gray, silver) !important;
   z-index: 10;
 }
 
@@ -912,7 +917,7 @@ textarea.input {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #101e45;
+  background: linear-gradient(to right, gray, silver) !important;
   z-index: 10;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
