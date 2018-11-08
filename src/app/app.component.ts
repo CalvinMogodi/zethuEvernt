@@ -146,10 +146,10 @@ export class AppComponent {
       updates['guests/'+this.guest.key+'/confirmed/'] = true;    
       updates['guests/'+this.guest.key+'/name/'] = this.guest.name; 
       updates['guests/'+this.guest.key+'/surname/'] = this.guest.surname; 
-      updates['guests/'+this.guest.key+'/contactNumber/'] = "0" + this.guest.contactNumber; 
+      updates['guests/'+this.guest.key+'/contactNumber/'] = this.guest.contactNumber; 
       updates['guests/'+this.guest.key+'/email/'] = this.guest.email;  
       updates['guests/'+this.guest.key+'/organization/'] = this.guest.organization; 
-      updates['guests/'+this.guest.key+'/officeNumber/'] = "0" + this.guest.officeNumber; 
+      updates['guests/'+this.guest.key+'/officeNumber/'] = this.guest.officeNumber; 
       updates['guests/'+this.guest.key+'/role/'] = this.guest.role;  
       updates['guests/'+this.guest.key+'/titleText/'] = this.guest.titleText;        
       this.db.database.ref().update(updates);  

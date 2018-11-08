@@ -45,7 +45,7 @@ export class ContactusComponent implements OnInit {
       let emailTosent = {
         name: this.message.name,
         surname: this.message.surname,
-        contactnumber: "0" + this.message.contactNumber,
+        contactnumber: this.message.contactNumber,
         emailaddress: this.message.emailaddress,
         message: this.message.message,
       };

@@ -338,11 +338,11 @@ textarea.input {
 
 .main-nav li a:hover, .main-nav li a:focus {
   background-color: transparent;
-  color: #101e45;
+  color: silver;
 }
 
 #header.transparent-navbar .main-nav li a:hover {
-  color: #101e45;
+  color: silver;
 }
 
 .navbar-toggle {
@@ -366,7 +366,7 @@ textarea.input {
 }
 
 .isMobile{
-  display: none;
+  display: none !important;
 }
 
 @media (min-width: 767px) and (orientation : landscape) {
@@ -380,14 +380,17 @@ textarea.input {
   #home .home-wrapper{
     top: 99% !important;
   }
+  .isNotMobile{
+    display: none !important;
+  }
 }
 
 @media (min-width: 767px) and (orientation : portrait) {
 
   .mobile_home {
-    background-size: contain !important;
+    background-size: cover !important;
     background-repeat: no-repeat !important;
-    background-image: url(../images/background_image_mobile.png) !important;
+    background-image: url(../images/background_image_mobile_n.png) !important;
 }
 
   #home .home-wrapper{
@@ -412,15 +415,12 @@ textarea.input {
 
 @media only screen and (max-width: 767px) and (orientation: landscape) {
   .mobile_home {
-    background-size: contain !important;
+    background-size: cover !important;
     background-repeat: no-repeat !important;
     background-image: url(../images/background_landscape.png) !important;
 }
 #home .home-wrapper{
-  top: 78%;
-}
-.isNotMobile{
-  display: none;
+  top: 99%;
 }
 }
 
@@ -428,19 +428,34 @@ textarea.input {
   .mobile_home {
     background-size: contain !important;
     background-repeat: no-repeat !important;
-    background-image: url(../images/background_image_mobile.png) !important;
+    background-image: url(../images/background_image_mobile_n.png) !important;
 }
 #home .home-wrapper{
-  top: 65% !important;
+  top: 99% !important;
 }
-.isNotMobile{
-  display: none;
+.isMobile{
+  display: block !important;
 }
+
 }
 
 @media only screen and (max-width: 767px) {
     .color_map{
     margin-left: 250px !important;
+  }
+
+  .home_mobile_footer{
+    width: -webkit-fill-available;
+    margin-left: 120px !important;
+    margin-right: -225px !important;
+  }
+
+  .imgHeight{
+    height: 35px !important;
+  }
+
+  .imgMargin{
+    margin-top: -35px !important;
   }
   
   .btn_padding{

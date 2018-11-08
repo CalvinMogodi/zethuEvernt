@@ -55,7 +55,7 @@
       <!-- /navbar header -->
 
       <!-- Navigation -->
-      <ul class="nav main-nav navbar-right" id="nav" style="float: right!important;  margin-right: -170px; margin-top: -68px;
+      <ul class="nav main-nav navbar-right" id="nav" style="float: right!important;  margin-right: -140px; margin-top: -68px;
     padding: 15px;">
         <li class="nav-item menuitemhome" id="menuitemhome">
           <a href="#home">Home</a>
@@ -134,12 +134,12 @@
 <!-- /Package -->
 
 <!-- Event Map -->
-<!-- <div id="package" id="eventmap" style="background-color: ghostwhite">
-  container -->
-<!-- <app-eventmap></app-eventmap>
-  /container -->
-<!--</div>
- /Event Map -->
+<div id="package" id="eventmap" style="background-color: gray">
+ <!--  container -->
+<app-eventmap></app-eventmap>
+  <!-- /container -->
+</div>
+ <!--/Event Map -->
 
 <!-- Contact Us -->
 <div id="contact" class="section">
@@ -188,7 +188,7 @@
       <div class="modal-body">
         <form *ngIf="!isOpen">
           <div class="form-group">
-            <label for="exampleInputEmail1">Verification Code</label>
+            <label for="exampleInputEmail1">Please enter your verification code.</label>
             <input [value]="verificationCode" [ngModelOptions]="{standalone: true}" (input)="verificationCode = $event.target.value"
               type="text" [(ngModel)]="verificationCode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
               placeholder="Enter Code">
@@ -257,21 +257,21 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Cell Number</label>
             <input [(ngModel)]="guest.contactNumber" [value]="guest.contactNumber" formControlName="contactNumber" (input)="guest.contactNumber = $event.target.value"
-              type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+            type="text" pattern="\d*" maxlength="10" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
             <small *ngIf="!userForm.controls.contactNumber.valid && (userForm.controls.contactNumber.dirty || submitAttempt && !alreadyconfirmed)"
               class="red">The field above is required.</small>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Office Number</label>
             <input [(ngModel)]="guest.officeNumber" [value]="guest.officeNumber" formControlName="officeNumber" (input)="guest.officeNumber = $event.target.value"
-              type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+            type="text" pattern="\d*" maxlength="10" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
             <small *ngIf="!userForm.controls.officeNumber.valid && (userForm.controls.officeNumber.dirty || submitAttempt)" class="red">The
               field above is required.</small>
           </div>
         </form>
         <form *ngIf="showSuc && !alreadyconfirmed">
           <div class="form-group">
-            <label style="color: green;">Congratulations! You are now successfully registered.</label>
+            <label style="color: green;">Thank you for your confirmation. Please find more details in your confirmation email.</label>
           </div>
         </form>
         <form *ngIf="alreadyconfirmed">
@@ -286,7 +286,7 @@
         <small *ngIf="showError" style="color: red;font-size:small;text-align:center"> We are unable to confirm your code
           please make sure that you entered the correct code.</small>
 
-        <button type="button" (click)="procced()" class="btn btn-primary" *ngIf="!isOpen">Procced</button>
+        <button type="button" (click)="procced()" class="btn btn-primary" *ngIf="!isOpen">Proceed</button>
         <button type="button" (click)="onSubmit()" class="btn btn-primary" *ngIf="isOpen && !showSuc">Confirm</button>
         <button type="button" class="close" data-dismiss="modal" id="closeModel" aria-label="Close" class="btn btn-primary" *ngIf="showSuc">Close</button>
       </div>
